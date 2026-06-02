@@ -1,54 +1,388 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inspiring Connections — Turn relationships into intelligence</title>
-<meta name="description" content="Inspiring Connections helps you understand the people in your world — what they want, where they're heading, and how you can genuinely help.">
+<title>Inspiring Connections — Relationship intelligence</title>
+<meta name="description" content="Purposeful connection unlocks potential. Inspiring Connections is a human-first, AI-enabled relationship intelligence platform — fewer, better connections, built on trust.">
+<meta property="og:title" content="Inspiring Connections — Relationship intelligence">
+<meta property="og:description" content="Purposeful connection unlocks potential. The tools tell you what. We tell you why.">
+<meta name="theme-color" content="#156E6B">
+
+<!-- ============================================================================
+     INSPIRING CONNECTIONS — inspiringconnections.io
+     ----------------------------------------------------------------------------
+     THEME: relationship intelligence — the flagship IC brand behind the CIS
+     (Connection Intelligence System). Most "platform" of the four; confident
+     and credible, still warm. This is a refinement/strengthening of the
+     existing placeholder into an excellent single page.
+
+     Grounded in real IC material (Brand Guide + Platform Explainer + Voice Doctrine):
+       - Core idea: "Purposeful connection unlocks potential."
+       - Differentiator: "The tools tell you what. We tell you why."
+       - Two forces: ERIC (AI relationship engine) + ANNA (human-led narrative & care).
+         "Human-led, AI-assisted — always."
+       - The loop: Signal -> Spark -> Align -> Connect -> Adapt (Match -> Message -> Move).
+       - Trust signals: CQ (Connection Quotient), PMQ (Purpose & Motivation Quotient),
+         Impact Score (5Ps).
+       - Posture: professional, confident, warm, ethical. No hype.
+       - Logo concept (locked): butterfly wings formed by two face profiles.
+
+     BANNED WORDS (per IC Brand Lexicon) avoided here: synergy, leverage,
+     paradigm, optimise, best-in-class, world-class, disruptive, game-changer,
+     revolutionary. Keep it that way when editing.
+
+     ACCENT: IC teal primary (deep-teal hero), orange as CTA accent.
+
+     PAGE STRUCTURE:
+       1. <header>     brand + nav + CTA
+       2. #hero        positioning (dark teal, with butterfly motif)
+       3. #why         why this exists (3 problems)
+       4. #loop        how it works — the 5-step connection loop
+       5. #ericanna    ERIC + ANNA (the two forces)
+       6. #trust       trust signals CQ / PMQ / Impact Score + guardrails
+       7. #who         who it's for (Growth Partners / Impact Partners)
+       8. #cta         start a conversation
+       9. <footer>
+     ============================================================================ -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{--teal:#1B9894;--teal-dim:#156E6B;--orange:#E1702F;--bg:#F8F7F4;--card:#FFFFFE;--text:#2D2D2D;--mute:#5A5A5A;--border:#E6E2D8}
+  :root{
+    --teal:#1B9894; --teal-deep:#156E6B; --teal-light:#2BBDB6;
+    --orange:#E1702F; --orange-deep:#B85820;
+    --cream:#F8F7F4; --surface:#FDFCF8; --card:#FFFFFE;
+    --border:#E6E2D8; --border-strong:#D4CFC0;
+    --charcoal:#2D2D2D; --mute:#5A5A5A; --dim:#7A7A7A;
+    --accent:var(--teal); --accent-deep:var(--teal-deep);
+    --font-head:'Montserrat',system-ui,sans-serif;
+    --font-body:'Open Sans',system-ui,sans-serif;
+    --maxw:1120px;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Open Sans',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-  header{padding:26px 0}
-  .brand{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:var(--teal);letter-spacing:-.3px}
-  .brand span{color:var(--orange)}
-  .hero{padding:72px 0 56px}
-  .eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange)}
-  h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(34px,6vw,58px);line-height:1.05;margin:14px 0 18px;letter-spacing:-1px}
-  .sub{font-size:19px;color:var(--mute);max-width:620px}
-  .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:13px 26px;border-radius:10px}
-  .btn-p{background:var(--teal);color:#fff}.btn-p:hover{background:var(--teal-dim)}
-  .btn-s{color:var(--teal);border:1.5px solid var(--border)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:24px 0 72px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
-  .card h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;margin-bottom:8px}
-  .card .n{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--teal);font-size:14px}
-  footer{border-top:1px solid var(--border);padding:30px 0;color:var(--mute);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  footer a{color:var(--teal)}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--charcoal);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+
+  /* header */
+  header{padding:20px 0;position:sticky;top:0;z-index:30;background:rgba(248,247,244,.86);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+  header.scrolled{border-color:var(--border)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .brand-mark{width:36px;height:36px;flex:none}
+  .logo .name{font-family:var(--font-head);font-weight:800;font-size:18px;color:var(--charcoal);letter-spacing:-.3px}
+  .logo .name b{color:var(--accent)}
+  nav .nav-links{display:flex;gap:22px;align-items:center}
+  nav a{font-family:var(--font-head);font-weight:600;font-size:14px;color:var(--mute);text-decoration:none}
+  nav a:hover{color:var(--accent)}
+  nav a.cta{background:var(--orange);color:#fff;padding:10px 18px;border-radius:10px}
+  nav a.cta:hover{background:var(--orange-deep);color:#fff}
+  @media(max-width:720px){nav .nav-links a:not(.cta){display:none}}
+
+  /* hero — dark teal full-bleed with butterfly motif */
+  .hero{background:radial-gradient(120% 120% at 80% -20%,#1B9894 0%,#156E6B 45%,#10403f 100%);color:#EAF6F5;border-radius:0 0 32px 32px;overflow:hidden;position:relative}
+  .hero .wrap{padding:clamp(56px,10vw,116px) 26px clamp(56px,9vw,104px);position:relative;z-index:2}
+  .hero .eyebrow{font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-light)}
+  .hero h1{font-family:var(--font-head);font-weight:800;color:#fff;font-size:clamp(38px,6.6vw,68px);line-height:1.04;letter-spacing:-1.5px;margin:18px 0 18px;max-width:18ch}
+  .hero h1 em{font-style:italic;font-weight:700;color:var(--teal-light)}
+  .hero .lead{font-size:clamp(18px,2.1vw,22px);color:#CFE9E7;max-width:60ch}
+  .cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:var(--font-head);font-weight:700;font-size:15px;text-decoration:none;padding:14px 28px;border-radius:12px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 14px 30px rgba(225,112,47,.3)}
+  .btn-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .btn-light:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+  /* large faint butterfly motif in hero */
+  .hero .motif{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:min(48vw,520px);opacity:.16;z-index:1;color:#EAF6F5}
+  @media(max-width:760px){.hero .motif{opacity:.10;right:-20%}}
+
+  section{padding:clamp(52px,8vw,98px) 0}
+  .section-head{max-width:62ch;margin-bottom:44px}
+  .section-head .eyebrow{font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--orange)}
+  .section-head h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,4.2vw,44px);letter-spacing:-.8px;line-height:1.12;margin-top:10px}
+  .section-head p{margin-top:14px;color:var(--mute);font-size:clamp(17px,1.8vw,19px)}
+
+  /* why — 3 problems */
+  .why{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .wcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .wcard:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(45,45,45,.08);border-color:var(--border-strong)}
+  .wcard .ic{width:40px;height:40px;color:var(--teal);margin-bottom:14px}
+  .wcard h3{font-family:var(--font-head);font-weight:700;font-size:19px;margin-bottom:8px}
+  .wcard p{color:var(--mute);font-size:16px}
+
+  /* loop */
+  .loop{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));counter-reset:s}
+  .lstep{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;position:relative}
+  .lstep .n{font-family:var(--font-head);font-weight:800;font-size:13px;letter-spacing:1px;color:var(--teal-deep)}
+  .lstep h3{font-family:var(--font-head);font-weight:700;font-size:18px;margin:6px 0 8px;color:var(--charcoal)}
+  .lstep p{color:var(--mute);font-size:15px}
+  .loop-note{margin-top:24px;color:var(--mute);font-size:15.5px;font-style:italic}
+
+  /* ERIC + ANNA */
+  .duo{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:760px){.duo{grid-template-columns:1fr 1fr}}
+  .force{border-radius:22px;padding:34px}
+  .force.eric{background:linear-gradient(160deg,#fff,#EAF6F5);border:1px solid #CBE6E4}
+  .force.anna{background:linear-gradient(160deg,#fff,#FFF6EF);border:1px solid #F1D8C4}
+  .force .name{font-family:var(--font-head);font-weight:800;font-size:26px;letter-spacing:-.5px}
+  .force.eric .name{color:var(--teal-deep)} .force.anna .name{color:var(--orange)}
+  .force .role{font-family:var(--font-head);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin:2px 0 16px}
+  .force ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .force li{display:flex;gap:11px;font-size:16px;color:var(--charcoal)}
+  .force li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;margin-top:9px}
+  .force.eric li::before{background:var(--teal)} .force.anna li::before{background:var(--orange)}
+  .duo-tag{text-align:center;margin-top:28px;font-family:var(--font-head);font-weight:700;font-size:clamp(18px,2.4vw,24px);color:var(--charcoal);letter-spacing:-.3px}
+
+  /* trust signals */
+  .signals{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .sig{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .2s ease,box-shadow .2s ease}
+  .sig:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(45,45,45,.07)}
+  .sig .abbr{font-family:var(--font-head);font-weight:800;font-size:30px;color:var(--teal);letter-spacing:-1px}
+  .sig h3{font-family:var(--font-head);font-weight:700;font-size:16px;margin:4px 0 8px}
+  .sig p{color:var(--mute);font-size:15px}
+  .guard{margin-top:34px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .gitem{display:flex;gap:12px;align-items:flex-start}
+  .gitem .gi{flex:none;width:26px;height:26px;color:var(--teal-deep)}
+  .gitem b{font-family:var(--font-head);font-size:15px;display:block;margin-bottom:2px}
+  .gitem span{color:var(--mute);font-size:14.5px}
+
+  /* who — two audiences */
+  .who{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:760px){.who{grid-template-columns:1fr 1fr}}
+  .wbox{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:34px}
+  .wbox .tag{font-family:var(--font-head);font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange)}
+  .wbox h3{font-family:var(--font-head);font-weight:800;font-size:23px;margin:8px 0 10px;letter-spacing:-.4px}
+  .wbox p{color:var(--mute);font-size:16px;margin-bottom:14px}
+  .wbox ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .wbox li{display:flex;gap:10px;font-size:15.5px}
+  .wbox li::before{content:"→";color:var(--teal);font-weight:700}
+
+  /* final cta — teal band */
+  .final{background:linear-gradient(155deg,#156E6B,#1B9894);border-radius:28px;padding:clamp(40px,6vw,72px);text-align:center;color:#EAF6F5}
+  .final h2{font-family:var(--font-head);font-weight:800;color:#fff;font-size:clamp(28px,4.6vw,46px);letter-spacing:-1px;max-width:20ch;margin:0 auto 14px}
+  .final p{color:#CFE9E7;font-size:clamp(17px,1.9vw,20px);max-width:54ch;margin:0 auto 28px}
+
+  footer{border-top:1px solid var(--border);padding:34px 0;color:var(--mute);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer a{color:var(--accent-deep)}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.wcard,.sig{transition:none}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">Inspiring <span>Connections</span></div></div></header>
-<main class="wrap">
+
+<!-- 1. HEADER ---------------------------------------------------------------- -->
+<header id="siteHeader">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Inspiring Connections home">
+      <!-- Butterfly wings formed by two face profiles (concept locked in Brand Guide).
+           Swap for John's final IC logo asset when exported (see README). -->
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Inspiring Connections butterfly mark">
+        <path d="M20 8v24" stroke="#2D2D2D" stroke-width="1.4"/>
+        <path d="M20 12c-3-5-8-7-12-4s-3 9 1 12c-4 1-6 5-4 8s8 2 11-2c1-2 3-6 4-14z" fill="#1B9894"/>
+        <path d="M20 12c3-5 8-7 12-4s3 9-1 12c4 1 6 5 4 8s-8 2-11-2c-1-2-3-6-4-14z" fill="#E1702F"/>
+      </svg>
+      <span class="name">Inspiring <b>Connections</b></span>
+    </a>
+    <nav>
+      <div class="nav-links">
+        <a href="#loop">How it works</a>
+        <a href="#ericanna">ERIC + ANNA</a>
+        <a href="#trust">Trust</a>
+        <a class="cta" href="#cta">Let's talk</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 2. HERO ---------------------------------------------------------------- -->
   <section class="hero">
-    <div class="eyebrow">Relationship Intelligence</div>
-    <h1>Turn relationships into intelligence.</h1>
-    <p class="sub">We help you understand the people in your world — what they want, where they're heading, and how you can genuinely help — so every connection becomes a chance to do good work together.</p>
-    <div class="cta">
-      <a class="btn btn-p" href="mailto:john@rethinkingwork.life">Start a conversation</a>
-      <a class="btn btn-s" href="#how">How it works</a>
+    <!-- faint large butterfly motif -->
+    <svg class="motif" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M100 40v120" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M100 60c-16-26-44-36-64-20s-14 48 6 62c-22 6-32 26-22 42s44 10 60-12c6-10 14-32 20-72z" fill="currentColor"/>
+      <path d="M100 60c16-26 44-36 64-20s14 48-6 62c22 6 32 26 22 42s-44 10-60-12c-6-10-14-32-20-72z" fill="currentColor"/>
+    </svg>
+    <div class="wrap">
+      <div class="eyebrow">Relationship intelligence</div>
+      <h1>Purposeful connection unlocks <em>potential</em>.</h1>
+      <p class="lead">Inspiring Connections turns your network into real understanding — who matters, why, and how to genuinely help. Fewer, better connections. Human-led, AI-assisted, built on trust.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Start a conversation</a>
+        <a class="btn btn-light" href="#loop">See how it works</a>
+      </div>
     </div>
   </section>
-  <section class="grid" id="how">
-    <div class="card"><div class="n">01</div><h3>See people clearly</h3><p>Every contact, enriched into real intelligence: their motivations, their moment, their potential.</p></div>
-    <div class="card"><div class="n">02</div><h3>Act at the right moment</h3><p>Know who to reach, when, and why — with the context that makes outreach land.</p></div>
-    <div class="card"><div class="n">03</div><h3>Build a network that compounds</h3><p>Connections that create more connections — value that grows with every introduction.</p></div>
+
+  <!-- 3. WHY ----------------------------------------------------------------- -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Why this exists</div>
+        <h2>We're surrounded by contacts — and starved of connection</h2>
+        <p>The tools tell you <em>what</em>: who changed jobs, who raised money. They never tell you <em>why</em> someone gets up in the morning, or what they actually need right now. That's the gap.</p>
+      </div>
+      <div class="why">
+        <div class="wcard reveal">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>
+          <h3>Signal overload</h3>
+          <p>Plenty of "interest". Not enough clarity on what matters, when it matters, and who it matters to.</p>
+        </div>
+        <div class="wcard reveal">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4h16v12H7l-3 3z"/></svg>
+          <h3>Low-trust outreach</h3>
+          <p>Too much cold noise. People ignore messages that don't feel human, timely or relevant — and reputations pay for it.</p>
+        </div>
+        <div class="wcard reveal">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="16" r="3"/><path d="M10.5 9.5l4 5"/></svg>
+          <h3>Good people don't meet</h3>
+          <p>The right organisations and the right partners don't always find each other — or don't move fast once they do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LOOP ---------------------------------------------------------------- -->
+  <section id="loop">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">How it works</div>
+        <h2>A simple loop, designed for change</h2>
+        <p>Match, message, move. Every step creates evidence — what worked, what didn't, and what should happen next.</p>
+      </div>
+      <div class="loop">
+        <div class="lstep reveal"><div class="n">01</div><h3>Signal</h3><p>Spot intent and hypotheses before any human contact — who's worth understanding, and why.</p></div>
+        <div class="lstep reveal"><div class="n">02</div><h3>Spark</h3><p>Make a warm introduction, or a high-quality first outreach that respects the reader's time.</p></div>
+        <div class="lstep reveal"><div class="n">03</div><h3>Align</h3><p>Confirm the fit: outcomes, constraints and expectations — so nothing drifts.</p></div>
+        <div class="lstep reveal"><div class="n">04</div><h3>Connect</h3><p>Run the right conversation and capture what actually matters about the relationship.</p></div>
+        <div class="lstep reveal"><div class="n">05</div><h3>Adapt</h3><p>Learn and improve — matching, messaging and next steps get sharper every cycle.</p></div>
+      </div>
+      <p class="loop-note reveal">The longer it runs, the more the intelligence compounds — not lock-in through friction, but value that exists nowhere else.</p>
+    </div>
+  </section>
+
+  <!-- 5. ERIC + ANNA --------------------------------------------------------- -->
+  <section id="ericanna">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Two complementary forces</div>
+        <h2>ERIC finds the fit. ANNA keeps it human.</h2>
+        <p>The intelligence does the heavy lifting; people make the calls. Always.</p>
+      </div>
+      <div class="duo">
+        <div class="force eric reveal">
+          <div class="name">ERIC</div>
+          <div class="role">Empowering Relationships, Inspiring Connections</div>
+          <ul>
+            <li>Finds best-fit matches using structured signals and human judgement</li>
+            <li>Drafts brand-aligned messaging with real context — never generic spam</li>
+            <li>Surfaces risks, objections and the next-best action</li>
+            <li>Tracks momentum and learning over time</li>
+          </ul>
+        </div>
+        <div class="force anna reveal">
+          <div class="name">ANNA</div>
+          <div class="role">Authentic Networks, Nurturing Aspirations</div>
+          <ul>
+            <li>Keeps communication honest, human and relationship-first</li>
+            <li>Turns data into a clear story partners can trust</li>
+            <li>Protects tone, ethics and psychological safety</li>
+            <li>Helps teams reflect and improve how they connect</li>
+          </ul>
+        </div>
+      </div>
+      <p class="duo-tag reveal">Human-led, AI-assisted — always.</p>
+    </div>
+  </section>
+
+  <!-- 6. TRUST --------------------------------------------------------------- -->
+  <section id="trust">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Trust &amp; transparency</div>
+        <h2>We don't just match — we make the logic visible</h2>
+        <p>Every connection comes with a rationale, a confidence band, and a next-best action. Three simple scores keep it honest.</p>
+      </div>
+      <div class="signals">
+        <div class="sig reveal"><div class="abbr">CQ</div><h3>Connection Quotient</h3><p>Relationship health and momentum — activity, responsiveness, diversity and follow-through.</p></div>
+        <div class="sig reveal"><div class="abbr">PMQ</div><h3>Purpose &amp; Motivation Quotient</h3><p>Clarifies alignment and intent, so partnerships don't drift or become performative.</p></div>
+        <div class="sig reveal"><div class="abbr">IS</div><h3>Impact Score (5Ps)</h3><p>Balances People, Planet, Purpose, Potential and Profit — transparently and accountably.</p></div>
+      </div>
+      <div class="guard reveal">
+        <div class="gitem"><svg class="gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><div><b>Consent-first</b><span>Clear contactability and channel preference. No grey-area scraping.</span></div></div>
+        <div class="gitem"><svg class="gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><b>GDPR-aware by design</b><span>Data minimisation, purpose limitation, traceable provenance.</span></div></div>
+        <div class="gitem"><svg class="gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg><div><b>Human-in-the-loop</b><span>ERIC assists. Humans decide. ANNA protects tone and care.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. WHO ----------------------------------------------------------------- -->
+  <section id="who">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Who it's for</div>
+        <h2>Two sides of every good connection</h2>
+      </div>
+      <div class="who">
+        <div class="wbox reveal">
+          <div class="tag">Growth Partners</div>
+          <h3>Fewer meetings. Better decisions.</h3>
+          <p>Purpose-driven organisations who need the right partners, at the right moment, with the right evidence.</p>
+          <ul>
+            <li>Curated introductions that fit your outcomes and constraints</li>
+            <li>A clear brief: what success looks like and who needs to be involved</li>
+            <li>An evidence trail you can share internally with confidence</li>
+          </ul>
+        </div>
+        <div class="wbox reveal">
+          <div class="tag">Impact Partners</div>
+          <h3>Less chasing. More fit.</h3>
+          <p>High-quality providers and specialists who want warm, relevant introductions — not generic lead lists.</p>
+          <ul>
+            <li>Introductions based on real needs and timing</li>
+            <li>Messaging that stays true to your brand and avoids hype</li>
+            <li>Visibility into where each relationship sits in the journey</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FINAL CTA ----------------------------------------------------------- -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="final reveal">
+        <h2>Let's make your next connection count.</h2>
+        <p>Whether you're looking for the right partners or want your network to finally work for you — start with a conversation. No pitch. Just genuine interest in what you're trying to do.</p>
+        <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=Inspiring%20Connections%20—%20let's%20talk">Start a conversation</a>
+      </div>
+    </div>
   </section>
 </main>
-<footer class="wrap"><div>© 2026 Inspiring Connections</div><div><a href="mailto:john@rethinkingwork.life">john@rethinkingwork.life</a></div></footer>
+
+<!-- 9. FOOTER ---------------------------------------------------------------- -->
+<footer>
+  <div class="wrap">
+    <div>© 2026 Inspiring Connections</div>
+    <div><a href="mailto:john@rethinkingwork.life">john@rethinkingwork.life</a></div>
+    <div><a href="https://rethinkingwork.life">Rethinking Work</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){var h=document.getElementById('siteHeader');var on=function(){h.classList.toggle('scrolled',window.scrollY>8)};on();window.addEventListener('scroll',on,{passive:true});})();
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>

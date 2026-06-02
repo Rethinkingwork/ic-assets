@@ -1,54 +1,291 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>School of Thought — Better ideas, better ways of working</title>
-<meta name="description" content="A place for learning, reflection and fresh thinking — turning curiosity into capability.">
+<title>School of Thought — Create time and space to think</title>
+<meta name="description" content="A foundational thinking space. Working with people as a thinking partner — creating time and space to explore your thoughts, find your flow, and discover what matters.">
+<meta property="og:title" content="School of Thought — Create time and space to think">
+<meta property="og:description" content="A thinking partner. Create time and space, explore your thoughts, discover what matters, and find your flow.">
+<meta name="theme-color" content="#156E6B">
+
+<!-- ============================================================================
+     SCHOOL OF THOUGHT — schoolofthought.life
+     ----------------------------------------------------------------------------
+     THEME: a calm, spacious, reflective THINKING SPACE. John as a thinking
+     partner. Grounded in his real philosophy (Voice Doctrine, Domain 0):
+       "Create time and space, explore your thoughts, discover what matters,
+        and find your flows."  + the walking-and-talking method.
+
+     ACCENT: deep teal (calm/foundational) over a generous cream canvas.
+     The whole point is whitespace and breathing room — resist adding clutter.
+
+     PAGE STRUCTURE (edit these sections in order):
+       1. <header>      brand mark + single quiet link
+       2. #hero         the invitation — big calm statement + CTAs
+       3. #ethos        the four-part philosophy (time/space/thoughts/flow)
+       4. #walking      the walking-and-talking method (the differentiator)
+       5. #how          what a thinking-partner session actually is
+       6. #invite       closing invitation + contact
+       7. <footer>
+
+     LOGOS — IMPORTANT FOR JOHN:
+       John has TWO logos for this brand:
+        (a) the dual-face / two-profiles mark (origin of the IC butterfly — see
+            Voice Doctrine: "the original IC butterfly logo with the two faces
+            came from this philosophy").
+        (b) a BUSINESS logo: a CIRCLE WITH TWO FACES and a business message
+            around the rim. This has NOT been located as a clean asset yet.
+       Drive candidates found (record only — not embedded):
+        - "Secondary Circular Logos Transparent-02.psd"     id 1bittLw807tr2Tsqy_F932ktyDpx4zC6A
+        - "Secondary Circular Logos Transparent-orange.psd"  id 1UgrmOTz0XUVc81oQYm9vP2wAarHC5oxT
+        - IC primary circle (SVG)  id 1OBYXLrEsQE3wyohW5fvJ3AhWejR484F-
+       Below, the .brand-mark is an inline SVG PLACEHOLDER (two facing profiles
+       in a circle) clearly marked. Swap it for John's real circular business
+       logo when the export is ready. See sites/README.md.
+     ============================================================================ -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{--teal:#1B9894;--teal-dim:#156E6B;--purple:#7C3AED;--bg:#F8F7F4;--card:#FFFFFE;--text:#2D2D2D;--mute:#5A5A5A;--border:#E6E2D8}
+  /* Self-contained styles so the page works standalone on Vercel.
+     Mirrors sites/shared/brand.css — converge there over time. */
+  :root{
+    --teal:#1B9894; --teal-deep:#156E6B; --teal-light:#2BBDB6;
+    --cream:#F8F7F4; --surface:#FDFCF8; --card:#FFFFFE;
+    --border:#E6E2D8; --border-strong:#D4CFC0;
+    --charcoal:#2D2D2D; --mute:#5A5A5A; --dim:#7A7A7A;
+    --accent:var(--teal-deep); --accent-soft:var(--teal);
+    --font-head:'Montserrat',system-ui,sans-serif;
+    --font-body:'Open Sans',system-ui,sans-serif;
+    --maxw:1020px;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Open Sans',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body); color:var(--charcoal);
+    /* soft cream-to-pale-teal wash for a calm, airy feel */
+    background:
+      radial-gradient(120% 70% at 80% -10%, rgba(43,189,182,.10), transparent 60%),
+      radial-gradient(90% 60% at -10% 110%, rgba(21,110,107,.07), transparent 55%),
+      var(--cream);
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+
+  /* header */
   header{padding:26px 0}
-  .brand{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:var(--purple);letter-spacing:-.3px}
-  .brand span{color:var(--teal)}
-  .hero{padding:72px 0 56px}
-  .eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal)}
-  h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(34px,6vw,58px);line-height:1.05;margin:14px 0 18px;letter-spacing:-1px}
-  .sub{font-size:19px;color:var(--mute);max-width:620px}
-  .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:13px 26px;border-radius:10px}
-  .btn-p{background:var(--purple);color:#fff}.btn-p:hover{filter:brightness(.92)}
-  .btn-s{color:var(--purple);border:1.5px solid var(--border)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:24px 0 72px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
-  .card h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;margin-bottom:8px}
-  .card .n{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--purple);font-size:14px}
-  footer{border-top:1px solid var(--border);padding:30px 0;color:var(--mute);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  footer a{color:var(--teal)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:13px;text-decoration:none}
+  .brand-mark{width:40px;height:40px;flex:none}
+  .logo .name{font-family:var(--font-head);font-weight:800;font-size:18px;color:var(--charcoal);letter-spacing:-.2px}
+  .logo .name b{color:var(--accent)}
+  .nav-link{font-family:var(--font-head);font-weight:600;font-size:14px;color:var(--mute);text-decoration:none}
+  .nav-link:hover{color:var(--accent)}
+
+  /* hero */
+  .hero{padding:clamp(60px,11vw,120px) 0 clamp(40px,7vw,80px);text-align:center}
+  .eyebrow{font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent-soft)}
+  .hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(38px,7vw,72px);line-height:1.05;letter-spacing:-1.5px;margin:20px auto 22px;max-width:14ch}
+  .hero h1 em{font-style:italic;font-weight:700;color:var(--accent)}
+  .hero .lead{font-size:clamp(18px,2.2vw,22px);color:var(--mute);max-width:60ch;margin:0 auto}
+  .cta{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:var(--font-head);font-weight:700;font-size:15px;text-decoration:none;padding:14px 30px;border-radius:40px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:#114f4d;transform:translateY(-2px);box-shadow:0 14px 30px rgba(21,110,107,.22)}
+  .btn-ghost{color:var(--accent);border:1.5px solid var(--border-strong)}
+  .btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+  /* the slow-breathing mantra strip */
+  .mantra{padding:clamp(40px,6vw,72px) 0;text-align:center}
+  .mantra p{font-family:var(--font-head);font-weight:600;font-size:clamp(20px,3vw,30px);line-height:1.5;color:var(--charcoal);max-width:20ch;margin:0 auto;letter-spacing:-.5px}
+  .mantra .dot{color:var(--accent-soft)}
+
+  /* section scaffolding */
+  section{padding:clamp(48px,8vw,92px) 0}
+  .section-head{max-width:60ch;margin-bottom:42px}
+  .section-head h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,4.2vw,42px);letter-spacing:-.8px;line-height:1.12}
+  .section-head p{margin-top:14px;color:var(--mute);font-size:clamp(17px,1.8vw,19px)}
+
+  /* ethos — four quiet pillars */
+  .pillars{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .pillar{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+  .pillar:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(45,45,45,.07);border-color:var(--border-strong)}
+  .pillar .icon{width:38px;height:38px;color:var(--accent);margin-bottom:16px}
+  .pillar h3{font-family:var(--font-head);font-weight:700;font-size:20px;margin-bottom:8px}
+  .pillar p{color:var(--mute);font-size:16px}
+
+  /* walking — feature band */
+  .band{background:linear-gradient(160deg,#10403f,#156E6B);color:#EAF6F5;border-radius:28px;padding:clamp(36px,6vw,68px);position:relative;overflow:hidden}
+  .band::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:rgba(43,189,182,.18);filter:blur(10px)}
+  .band .eyebrow{color:var(--teal-light)}
+  .band h2{font-family:var(--font-head);font-weight:800;color:#fff;font-size:clamp(26px,4vw,40px);letter-spacing:-.8px;margin:14px 0 18px;max-width:18ch}
+  .band p{color:#CFE9E7;font-size:clamp(17px,1.9vw,20px);max-width:56ch;position:relative;z-index:1}
+  .band p + p{margin-top:16px}
+  .band .quote{font-style:italic;color:#EAF6F5;border-left:3px solid var(--teal-light);padding-left:18px;margin-top:26px;max-width:54ch}
+
+  /* how — the session */
+  .steps{display:grid;gap:0;grid-template-columns:1fr;counter-reset:step}
+  .step{display:flex;gap:22px;padding:26px 0;border-bottom:1px solid var(--border)}
+  .step:last-child{border-bottom:none}
+  .step .n{font-family:var(--font-head);font-weight:800;font-size:15px;color:#fff;background:var(--accent);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+  .step h3{font-family:var(--font-head);font-weight:700;font-size:19px;margin-bottom:4px}
+  .step p{color:var(--mute);font-size:16px;max-width:60ch}
+
+  /* invite */
+  .invite{text-align:center}
+  .invite h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,4.6vw,46px);letter-spacing:-1px;max-width:18ch;margin:0 auto 16px}
+  .invite p{color:var(--mute);font-size:clamp(17px,1.9vw,20px);max-width:52ch;margin:0 auto 30px}
+
+  /* footer */
+  footer{border-top:1px solid var(--border);padding:34px 0;color:var(--mute);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer a{color:var(--accent)}
+  .footer-note{font-size:12.5px;color:var(--dim);max-width:46ch}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}.btn,.pillar{transition:none}
+  }
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">School of <span>Thought</span></div></div></header>
-<main class="wrap">
+
+<!-- 1. HEADER ---------------------------------------------------------------- -->
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="School of Thought home">
+      <!-- PLACEHOLDER MARK: two facing profiles inside a circle.
+           Replace with John's real circular business logo (faces + rim message). -->
+      <svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="School of Thought mark (placeholder)">
+        <circle cx="24" cy="24" r="22.5" fill="none" stroke="#156E6B" stroke-width="1.5"/>
+        <!-- left profile -->
+        <path d="M20 13c-4 2-6 6-6 11s2 9 6 11c0-3-2-4-2-6 1 0 2-1 2-2-1-1-2-1-2-2 1-1 3-1 3-3-1-1-2-1-2-3 1-2 2-3 1-5z" fill="#156E6B"/>
+        <!-- right profile (mirrored) -->
+        <path d="M28 13c4 2 6 6 6 11s-2 9-6 11c0-3 2-4 2-6-1 0-2-1-2-2 1-1 2-1 2-2-1-1-3-1-3-3 1-1 2-1 2-3-1-2-2-3-1-5z" fill="#1B9894"/>
+      </svg>
+      <span class="name">School of <b>Thought</b></span>
+    </a>
+    <a class="nav-link" href="#invite">Start a conversation</a>
+  </div>
+</header>
+
+<main>
+  <!-- 2. HERO ---------------------------------------------------------------- -->
   <section class="hero">
-    <div class="eyebrow">Learning &amp; ideas</div>
-    <h1>Where better ideas become better ways of working.</h1>
-    <p class="sub">A place for learning, reflection and fresh thinking — turning curiosity into capability, one idea at a time.</p>
-    <div class="cta">
-      <a class="btn btn-p" href="mailto:john@rethinkingwork.life">Get in touch</a>
-      <a class="btn btn-s" href="#ethos">Our ethos</a>
+    <div class="wrap">
+      <div class="eyebrow">A thinking space</div>
+      <h1>Create the time and space to <em>think</em>.</h1>
+      <p class="lead">School of Thought is a thinking partner. Somewhere to step away from the noise, explore what's really on your mind, and find your way back to what matters.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#invite">Start a conversation</a>
+        <a class="btn btn-ghost" href="#ethos">What this is</a>
+      </div>
     </div>
   </section>
-  <section class="grid" id="ethos">
-    <div class="card"><div class="n">01</div><h3>Learn</h3><p>Ideas worth thinking with, drawn from the best of research and practice.</p></div>
-    <div class="card"><div class="n">02</div><h3>Reflect</h3><p>Space to question assumptions and see your work with fresh eyes.</p></div>
-    <div class="card"><div class="n">03</div><h3>Apply</h3><p>Thinking that doesn't stay theoretical — it changes what you do on Monday.</p></div>
+
+  <!-- The mantra — John's actual School of Thought line, given room to breathe -->
+  <section class="mantra" aria-label="Our philosophy">
+    <div class="wrap reveal">
+      <p>Create time and space<span class="dot">.</span> Explore your thoughts<span class="dot">.</span> Discover what matters<span class="dot">.</span> Find your flow<span class="dot">.</span></p>
+    </div>
+  </section>
+
+  <!-- 3. ETHOS — four pillars ------------------------------------------------ -->
+  <section id="ethos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Good thinking needs room</h2>
+        <p>Most of us never get it. The diary fills, the noise rises, and the questions that actually matter get pushed to "later". School of Thought is built around four simple things.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <h3>Time</h3>
+          <p>Protected, unhurried time — the rarest resource there is. No rushing to the next thing.</p>
+        </div>
+        <div class="pillar reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 19V8l8-4 8 4v11"/><path d="M4 19h16"/></svg>
+          <h3>Space</h3>
+          <p>Room to breathe and think out loud — where nobody owns the agenda and nothing is off the table.</p>
+        </div>
+        <div class="pillar reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10c.7.7 1 1.4 1 2h6c0-.6.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg>
+          <h3>Clarity</h3>
+          <p>Through honest, careful conversation, the noise quietens — and what actually matters comes into focus.</p>
+        </div>
+        <div class="pillar reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 12c3-6 6-6 9 0s6 6 9 0"/></svg>
+          <h3>Flow</h3>
+          <p>When the thinking moves freely, ideas connect. That's where the best of you tends to show up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WALKING — the differentiator --------------------------------------- -->
+  <section id="walking">
+    <div class="wrap">
+      <div class="band reveal">
+        <div class="eyebrow">The method</div>
+        <h2>Some of the best thinking happens on foot</h2>
+        <p>Walking and talking is one of the simplest, freest ways to connect — with an idea, and with another person. You walk side by side. Nobody controls the room. Nobody controls the environment. The environment is free.</p>
+        <p>It's expressive, explorative and mindful. You notice things. You escape the distractions of the day. And, somehow, the thinking loosens.</p>
+        <p class="quote">"Walking side by side means equality and freedom — no dominance, no agenda. It's where my best thinking happens. Away from the screen, in motion, bouncing ideas."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW — what a session is -------------------------------------------- -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>How a thinking session works</h2>
+        <p>No frameworks to learn. No deck. Just a genuine, curious conversation with someone who's spent 25 years listening to people for a living.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">1</div><div><h3>We make the space</h3><p>A walk, a call, or a quiet hour — whatever lets you think most freely. You bring whatever's on your mind; it doesn't need to be tidy.</p></div></div>
+        <div class="step reveal"><div class="n">2</div><div><h3>We listen — really listen</h3><p>To what you say, and to what you don't. The job here isn't to advise or fix. It's to understand, to ask the better question, and to help you hear yourself think.</p></div></div>
+        <div class="step reveal"><div class="n">3</div><div><h3>What matters comes into focus</h3><p>As the noise settles, the real question underneath it usually surfaces. Often that's the whole shift.</p></div></div>
+        <div class="step reveal"><div class="n">4</div><div><h3>You leave with your own clarity</h3><p>Not someone else's answer — yours. A clearer head, a next step that feels like you, and a little more room to breathe.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INVITE -------------------------------------------------------------- -->
+  <section id="invite">
+    <div class="wrap invite reveal">
+      <h2>Give yourself permission to think</h2>
+      <p>If you've been meaning to step back and think something through properly — a decision, a direction, or just the fog of it all — this is an open invitation.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=School%20of%20Thought%20—%20a%20conversation">Start a conversation</a>
+      </div>
+    </div>
   </section>
 </main>
-<footer class="wrap"><div>© 2026 School of Thought</div><div><a href="mailto:john@rethinkingwork.life">john@rethinkingwork.life</a></div></footer>
+
+<!-- 7. FOOTER ---------------------------------------------------------------- -->
+<footer>
+  <div class="wrap">
+    <div>© 2026 Schoolofthought.life Limited</div>
+    <div><a href="mailto:john@rethinkingwork.life">john@rethinkingwork.life</a></div>
+    <div class="footer-note">The thinking space behind Rethinking Work &amp; Inspiring Connections.</div>
+  </div>
+</footer>
+
+<!-- Reveal-on-scroll (inline so the page is self-contained on Vercel) -->
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>

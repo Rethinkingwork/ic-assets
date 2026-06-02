@@ -1,0 +1,146 @@
+/* ============================================================================
+   IC BRAND FAMILY — Shared stylesheet
+   ----------------------------------------------------------------------------
+   One source of truth for the four sister sites:
+     schoolofthought.life · rethinkingwork.life · rethinkingwork.co.uk
+     inspiringconnections.io
+
+   Canonical brand (Notion "IC Brand Guide" + cis-portals/lib/brand.js):
+     Teal #1B9894 · Deep Teal #156E6B · Orange #E1702F
+     Cream/Off-white #F8F7F4 · Charcoal #2D2D2D
+     Headings: Montserrat · Body: Open Sans
+
+   HOW TO USE
+     1. Each site links this file:  <link rel="stylesheet" href="../shared/brand.css">
+     2. Each site sets ONE accent on <body data-accent="...">  (see --accent below)
+        or overrides :root tokens inline in its own <style> block.
+     3. Everything below is intentionally simple and well-commented so John can
+        tweak spacing, colour, or type in one place and have it ripple out.
+
+   NOTE ON DEPLOY: these sites deploy as independent Vercel static projects with
+   each domain folder as the project root. A relative "../shared/brand.css" only
+   resolves if the repo root (sites/) is the deploy root. If a site is deployed
+   with its own folder as root, copy brand.css into that folder OR inline it.
+   For now every site ALSO carries its own self-contained <style> so it works
+   standalone — this shared file is the canonical reference to converge on.
+   ============================================================================ */
+
+/* ---- Design tokens (the whole palette in one place) ---------------------- */
+:root {
+  /* Core brand */
+  --teal:        #1B9894;
+  --teal-deep:   #156E6B;
+  --teal-light:  #2BBDB6;
+  --orange:      #E1702F;
+  --orange-deep: #B85820;
+  --orange-warm: #E8943A;
+
+  /* Neutrals */
+  --cream:   #F8F7F4;   /* page background — never pure white */
+  --surface: #FDFCF8;   /* soft card surface on cream */
+  --card:    #FFFFFE;
+  --border:  #E6E2D8;
+  --border-strong: #D4CFC0;
+  --charcoal: #2D2D2D;  /* primary text */
+  --mute:    #5A5A5A;
+  --dim:     #7A7A7A;
+
+  /* Per-site accent — override on <body> or in the page <style>.
+     Defaults to teal (IC primary). */
+  --accent:      var(--teal);
+  --accent-deep: var(--teal-deep);
+
+  /* Type + rhythm */
+  --font-head: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --maxw: 1080px;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(45,45,45,.04), 0 12px 32px rgba(45,45,45,.06);
+}
+
+/* ---- Reset + base -------------------------------------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* ---- Layout helpers ------------------------------------------------------ */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.section { padding: clamp(56px, 9vw, 104px) 0; }
+
+/* ---- Typography ---------------------------------------------------------- */
+h1, h2, h3, h4 { font-family: var(--font-head); letter-spacing: -.5px; line-height: 1.1; }
+h1 { font-weight: 800; font-size: clamp(36px, 6.5vw, 64px); letter-spacing: -1px; }
+h2 { font-weight: 800; font-size: clamp(28px, 4.2vw, 42px); }
+h3 { font-weight: 700; font-size: clamp(19px, 2.4vw, 23px); }
+p  { font-size: clamp(16px, 1.5vw, 18px); }
+
+.eyebrow {
+  font-family: var(--font-head);
+  font-weight: 700; font-size: 13px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent);
+}
+.lead { font-size: clamp(18px, 2.1vw, 21px); color: var(--mute); }
+
+/* ---- Buttons ------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-head); font-weight: 700; font-size: 15px;
+  text-decoration: none; padding: 14px 28px; border-radius: 12px;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-ghost { color: var(--accent); border: 1.5px solid var(--border-strong); }
+.btn-ghost:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+/* ---- Cards --------------------------------------------------------------- */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 30px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-strong); }
+.card .num { font-family: var(--font-head); font-weight: 800; color: var(--accent); font-size: 14px; letter-spacing: 1px; }
+.card h3 { margin: 10px 0 8px; }
+.card p { font-size: 16px; color: var(--mute); }
+
+.grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ---- Header / footer ----------------------------------------------------- */
+.site-header { padding: 22px 0; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo .mark { width: 34px; height: 34px; flex: none; }
+.logo .name { font-family: var(--font-head); font-weight: 800; font-size: 19px; color: var(--charcoal); letter-spacing: -.3px; }
+.logo .name b { color: var(--accent); font-weight: 800; }
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 0; color: var(--mute); font-size: 14px;
+}
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+.site-footer a { color: var(--accent); }
+
+/* ---- Reveal-on-scroll (progressive enhancement; safe without JS) --------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .btn, .card { transition: none; }
+}
