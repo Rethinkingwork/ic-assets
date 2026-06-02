@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Rethinking Work — Recruit. Retain. Realise.">
+  <rect width="1200" height="630" fill="#F8F7F4"/>
+  <rect width="1200" height="14" fill="#1B9894"/>
+  <rect y="616" width="1200" height="14" fill="#E1702F"/>
+  <g transform="translate(90,230)">
+    <text x="0" y="0" font-family="Montserrat, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#E1702F">THE THINKING SPACE FOR COMPANIES</text>
+    <text x="0" y="78" font-family="Montserrat, system-ui, sans-serif" font-size="76" font-weight="800" fill="#2D2D2D">Rethinking Work</text>
+    <g font-family="Montserrat, system-ui, sans-serif" font-size="46" font-weight="800">
+      <text x="0" y="160" fill="#1B9894">Recruit.</text>
+      <text x="270" y="160" fill="#156E6B">Retain.</text>
+      <text x="510" y="160" fill="#E1702F">Realise.</text>
+    </g>
+    <text x="0" y="218" font-family="'Open Sans', system-ui, sans-serif" font-size="30" fill="#5A5A5A">Teams outperform companies. Always have, always will.</text>
+  </g>
+</svg>

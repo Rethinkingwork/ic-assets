@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>smartreach — Outreach at scale, done like a human</title>
+<meta name="description" content="smartreach by Rethinking Work: high-volume email outreach that still feels human. Smart targeting, relevant messaging, real conversations — outreach done well.">
+<meta property="og:title" content="smartreach — Outreach at scale, done like a human">
+<meta property="og:description" content="High-volume email outreach that still feels human. Smart, relevant, and genuinely consultative.">
+<meta property="og:image" content="/og.svg">
+<meta name="theme-color" content="#E1702F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<!-- ============================================================================
+     SMARTREACH — rethinkingwork.co.uk
+     ----------------------------------------------------------------------------
+     THEME: the EMAIL OUTREACH-at-scale sister site. Where rethinkingwork.life
+     is the philosophy/consultancy, this domain is the engine: "smartreach" —
+     smart, human, high-volume outreach done well. Distinct angle: it's about
+     getting outreach RIGHT at volume, not cold-call spam.
+
+     Grounded in John's real smartreach material (Drive):
+       - "Smart Reach is an educated approach to creating a relationship... your
+          sole goal is to be more consultative, focused on their pains, needs,
+          wants, challenges — and underlyingly their potential."
+       - Hatred of cold-call spam ("utterly hideous... soul-destroying").
+       - Real, running operation: ICP search -> enrich -> personalise ->
+          send -> reply -> learn (the daily pipeline).
+       - "Trust probably [is the one thing that could kill this]. People have
+          got to trust us that we're doing the right thing."
+
+     ACCENT: ORANGE-led (energy / momentum), teal as support — visually the
+     warmest, most action-forward of the four sites, so it doesn't clone .life.
+
+     PAGE STRUCTURE:
+       1. <header>     brand + CTA
+       2. #hero        the promise: volume + human, not either/or
+       3. #problem     why most outreach fails (the contrast)
+       4. #how         the smartreach method (4 steps)
+       5. #stats       proof / what "done well" looks like (editable numbers)
+       6. #trust       the trust principle (non-negotiable)
+       7. #cta         start a conversation
+       8. <footer>
+     ============================================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --teal:#1B9894; --teal-deep:#156E6B;
+    --orange:#E1702F; --orange-deep:#B85820; --orange-warm:#E8943A;
+    --cream:#F8F7F4; --surface:#FDFCF8; --card:#FFFFFE;
+    --border:#E6E2D8; --border-strong:#D4CFC0;
+    --charcoal:#2D2D2D; --mute:#5A5A5A; --dim:#7A7A7A;
+    --accent:var(--orange); --accent-deep:var(--orange-deep);
+    --font-head:'Montserrat',system-ui,sans-serif;
+    --font-body:'Open Sans',system-ui,sans-serif;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--charcoal);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+
+  header{padding:20px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .brand-mark{width:34px;height:34px;flex:none}
+  .logo .name{font-family:var(--font-head);font-weight:800;font-size:19px;color:var(--charcoal);letter-spacing:-.4px}
+  .logo .name b{color:var(--accent)}
+  .logo .name small{font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);display:block;margin-top:-2px}
+  .nav-cta{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;background:var(--orange);padding:10px 18px;border-radius:10px;text-decoration:none}
+  .nav-cta:hover{background:var(--orange-deep)}
+
+  /* hero */
+  .hero{padding:clamp(54px,9vw,104px) 0 clamp(36px,6vw,68px)}
+  .eyebrow{font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal)}
+  .hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(38px,7vw,72px);line-height:1.03;letter-spacing:-1.5px;margin:16px 0 16px;max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero .lead{font-size:clamp(18px,2vw,21px);color:var(--mute);max-width:58ch}
+  .cta-row{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;font-family:var(--font-head);font-weight:700;font-size:15px;text-decoration:none;padding:14px 28px;border-radius:12px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 14px 30px rgba(225,112,47,.26)}
+  .btn-ghost{color:var(--teal-deep);border:1.5px solid var(--border-strong)}
+  .btn-ghost:hover{border-color:var(--teal);transform:translateY(-2px)}
+
+  section{padding:clamp(50px,8vw,94px) 0}
+  .section-head{max-width:60ch;margin-bottom:42px}
+  .section-head h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,4.2vw,44px);letter-spacing:-.8px;line-height:1.12}
+  .section-head p{margin-top:14px;color:var(--mute);font-size:clamp(17px,1.8vw,19px)}
+
+  /* problem — two columns contrast */
+  .contrast{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:760px){.contrast{grid-template-columns:1fr 1fr}}
+  .col{border-radius:20px;padding:32px}
+  .col.bad{background:#fff;border:1px solid var(--border)}
+  .col.good{background:linear-gradient(160deg,#fff,#FFF6EF);border:1px solid #F1D8C4}
+  .col h3{font-family:var(--font-head);font-weight:800;font-size:20px;margin-bottom:18px;letter-spacing:-.3px}
+  .col.bad h3{color:var(--dim)} .col.good h3{color:var(--orange)}
+  .col ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .col li{display:flex;gap:12px;font-size:16px;color:var(--charcoal)}
+  .col li .i{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;font-family:var(--font-head)}
+  .col.bad li .i{background:#EFEAE0;color:var(--dim)}
+  .col.good li .i{background:rgba(27,152,148,.14);color:var(--teal-deep)}
+  .col.bad li{color:var(--mute)}
+
+  /* how — steps */
+  .steps{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .stepcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .stepcard:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(45,45,45,.08);border-color:var(--border-strong)}
+  .stepcard .n{font-family:var(--font-head);font-weight:800;font-size:14px;color:#fff;background:var(--orange);width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .stepcard:nth-child(2) .n{background:var(--teal)} .stepcard:nth-child(3) .n{background:var(--teal-deep)} .stepcard:nth-child(4) .n{background:var(--orange-warm)}
+  .stepcard h3{font-family:var(--font-head);font-weight:700;font-size:18px;margin-bottom:8px}
+  .stepcard p{color:var(--mute);font-size:15.5px}
+
+  /* stats band */
+  .statband{background:linear-gradient(150deg,#B85820,#E1702F);border-radius:28px;padding:clamp(36px,5vw,60px);color:#fff;text-align:center}
+  .statband h2{font-family:var(--font-head);font-weight:800;color:#fff;font-size:clamp(24px,3.4vw,36px);letter-spacing:-.6px;margin-bottom:8px}
+  .statband .sub{color:#FCE6D7;max-width:54ch;margin:0 auto 34px;font-size:clamp(16px,1.8vw,18px)}
+  .stats{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));max-width:780px;margin:0 auto}
+  .stat .num{font-family:var(--font-head);font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:-1px}
+  .stat .lbl{margin-top:8px;font-size:14px;color:#FCE6D7}
+  .stat-note{margin-top:26px;font-size:12.5px;color:#FCE6D7;opacity:.85}
+
+  /* trust */
+  .trust{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:clamp(34px,5vw,56px);text-align:center}
+  .trust .eyebrow{color:var(--teal)}
+  .trust h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,4vw,42px);letter-spacing:-.8px;margin:12px auto 16px;max-width:20ch}
+  .trust p{color:var(--mute);font-size:clamp(17px,1.9vw,19px);max-width:58ch;margin:0 auto}
+  .trust .quote{font-style:italic;color:var(--charcoal);font-size:clamp(18px,2vw,21px);max-width:48ch;margin:24px auto 0;border-top:1px solid var(--border);padding-top:24px}
+
+  /* final cta */
+  .final{text-align:center}
+  .final h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,4.6vw,46px);letter-spacing:-1px;max-width:20ch;margin:0 auto 14px}
+  .final p{color:var(--mute);font-size:clamp(17px,1.9vw,20px);max-width:54ch;margin:0 auto 28px}
+
+  footer{border-top:1px solid var(--border);padding:34px 0;color:var(--mute);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer a{color:var(--accent-deep)}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.stepcard{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- 1. HEADER ---------------------------------------------------------------- -->
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="smartreach home">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="smartreach mark">
+        <rect x="4" y="9" width="32" height="22" rx="5" fill="none" stroke="#E1702F" stroke-width="1.8"/>
+        <path d="M6 12l14 10 14-10" fill="none" stroke="#1B9894" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="name">smart<b>reach</b><small>by Rethinking Work</small></span>
+    </a>
+    <a class="nav-cta" href="#cta">Talk to us</a>
+  </div>
+</header>
+
+<main>
+  <!-- 2. HERO ---------------------------------------------------------------- -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Outreach, done well</div>
+      <h1>Reach <em>thousands</em>. Sound like one human.</h1>
+      <p class="lead">smartreach is high-volume email outreach that doesn't read like spam. Smart targeting, relevant messaging and genuinely consultative conversation — at the scale your pipeline actually needs.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Start a conversation</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROBLEM — the contrast ---------------------------------------------- -->
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Most outreach at scale is hideous</h2>
+        <p>Blasting generic templates to a bought list is soul-destroying — for the sender and the recipient. People ignore messages that don't feel human, timely or relevant. The volume isn't the problem. The thoughtlessness is.</p>
+      </div>
+      <div class="contrast">
+        <div class="col bad reveal">
+          <h3>Cold spam</h3>
+          <ul>
+            <li><span class="i">✕</span> Same template to everyone</li>
+            <li><span class="i">✕</span> "Hope you're well" and nothing of substance</li>
+            <li><span class="i">✕</span> About the seller, not the reader</li>
+            <li><span class="i">✕</span> Burns your domain and your reputation</li>
+            <li><span class="i">✕</span> Ignored, deleted, marked as spam</li>
+          </ul>
+        </div>
+        <div class="col good reveal">
+          <h3>smartreach</h3>
+          <ul>
+            <li><span class="i">✓</span> Right person, right reason, right moment</li>
+            <li><span class="i">✓</span> A line that proves you understand their world</li>
+            <li><span class="i">✓</span> About their pains, needs and potential</li>
+            <li><span class="i">✓</span> Deliverability and sender health protected</li>
+            <li><span class="i">✓</span> Replies, conversations, real relationships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW — the method ---------------------------------------------------- -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>The smartreach method</h2>
+        <p>An educated approach to starting a relationship. The goal isn't to "send more emails" — it's to be more consultative, at volume, without losing the human.</p>
+      </div>
+      <div class="steps">
+        <div class="stepcard reveal"><div class="n">1</div><h3>Target</h3><p>Define a precise ideal profile and find the right people — verified, relevant, and worth your time. No spray-and-pray.</p></div>
+        <div class="stepcard reveal"><div class="n">2</div><h3>Understand</h3><p>Enrich each contact so we can speak to their actual context — their sector, their pressures, the challenge they're really facing.</p></div>
+        <div class="stepcard reveal"><div class="n">3</div><h3>Reach</h3><p>One sentence that signals you understand their world — not a clever-sounding template. Sequenced, paced, and built to land.</p></div>
+        <div class="stepcard reveal"><div class="n">4</div><h3>Learn</h3><p>Every open, reply and bounce feeds the next send. The system gets sharper the longer it runs — and so does your pipeline.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. STATS — proof (numbers are editable placeholders for John) ---------- -->
+  <section id="stats">
+    <div class="wrap">
+      <div class="statband reveal">
+        <h2>What "done well" looks like</h2>
+        <p class="sub">A live, running operation — smart prospecting and personalised sending, every working day.</p>
+        <div class="stats">
+          <div class="stat"><div class="num">Daily</div><div class="lbl">prospecting &amp; sending pipeline</div></div>
+          <div class="stat"><div class="num">100%</div><div class="lbl">contacts individually researched</div></div>
+          <div class="stat"><div class="num">UK</div><div class="lbl">senior people-leader audiences</div></div>
+          <div class="stat"><div class="num">Human</div><div class="lbl">every message, every reply</div></div>
+        </div>
+        <!-- TODO (John): swap these for real campaign metrics (reply rate, meetings booked, etc.) -->
+        <div class="stat-note">Indicative — replace with your live campaign metrics when ready.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TRUST --------------------------------------------------------------- -->
+  <section id="trust">
+    <div class="wrap">
+      <div class="trust reveal">
+        <div class="eyebrow">The non-negotiable</div>
+        <h2>Trust is the whole thing</h2>
+        <p>Outreach at scale only works if people trust that you're doing the right thing. That means consent-aware sending, honest messaging, and treating every inbox like it belongs to a person you respect — because it does.</p>
+        <p class="quote">"The one thing that could kill this if you get it wrong? Trust. People have got to trust us that we're doing the right thing."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FINAL CTA ----------------------------------------------------------- -->
+  <section id="cta">
+    <div class="wrap final reveal">
+      <h2>Outreach worth replying to.</h2>
+      <p>If you need pipeline but can't stomach the spam, let's talk. We'll show you what smart, human outreach looks like at the volume your business actually needs.</p>
+      <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=smartreach%20—%20let's%20talk">Start a conversation</a>
+    </div>
+  </section>
+</main>
+
+<!-- 8. FOOTER ---------------------------------------------------------------- -->
+<footer>
+  <div class="wrap">
+    <div>© 2026 Rethinking Work · smartreach</div>
+    <div><a href="mailto:john@rethinkingwork.life">john@rethinkingwork.life</a></div>
+    <div><a href="https://rethinkingwork.life">rethinkingwork.life</a> · <a href="https://inspiringconnections.io">inspiringconnections.io</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

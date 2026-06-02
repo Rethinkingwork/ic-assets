@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="smartreach favicon">
+  <rect width="32" height="32" rx="7" fill="#E1702F"/>
+  <text x="16" y="22" font-family="Montserrat, system-ui, sans-serif" font-size="18" font-weight="800" text-anchor="middle" fill="#fff">s</text>
+  <path d="M6 11l10 7 10-7" fill="none" stroke="#FDE3CF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+</svg>
