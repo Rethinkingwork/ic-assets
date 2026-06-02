@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="School of Thought — Create time and space to think">
+  <defs>
+    <radialGradient id="bg" cx="80%" cy="-10%" r="120%">
+      <stop offset="0%" stop-color="#FDFCF8"/>
+      <stop offset="60%" stop-color="#F1F8F7"/>
+      <stop offset="100%" stop-color="#E6F2F1"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(910,315) scale(2.4)" opacity="0.9">
+    <path d="M-4 -34c-11 5-16 16-16 29s5 24 16 29c0-8-5-11-5-16 3 0 5-3 5-5-3-3-5-3-5-5 3-3 8-3 8-8-3-3-5-3-5-8 3-5 5-8 2-13z" fill="#9FE0DC"/>
+    <path d="M4 -34c11 5 16 16 16 29s-5 24-16 29c0-8 5-11 5-16-3 0-5-3-5-5 3-3 5-3 5-5-3-3-8-3-8-8 3-3 5-3 5-8-3-5-5-8-2-13z" fill="#156E6B"/>
+  </g>
+  <g transform="translate(90,250)">
+    <text x="0" y="0" font-family="Montserrat, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#1B9894">A THINKING SPACE</text>
+    <text x="0" y="80" font-family="Montserrat, system-ui, sans-serif" font-size="74" font-weight="800" fill="#156E6B">School of Thought</text>
+    <text x="0" y="150" font-family="'Open Sans', system-ui, sans-serif" font-size="32" fill="#2D2D2D">Create time and space to think.</text>
+    <text x="0" y="198" font-family="'Open Sans', system-ui, sans-serif" font-size="28" fill="#5A5A5A">Explore your thoughts, discover what matters, find your flow.</text>
+  </g>
+</svg>

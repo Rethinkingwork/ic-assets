@@ -7,7 +7,9 @@
 <meta name="description" content="Purposeful connection unlocks potential. Inspiring Connections is a human-first, AI-enabled relationship intelligence platform — fewer, better connections, built on trust.">
 <meta property="og:title" content="Inspiring Connections — Relationship intelligence">
 <meta property="og:description" content="Purposeful connection unlocks potential. The tools tell you what. We tell you why.">
+<meta property="og:image" content="/og.svg">
 <meta name="theme-color" content="#156E6B">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
 <!-- ============================================================================
      INSPIRING CONNECTIONS — inspiringconnections.io
@@ -73,7 +75,7 @@
   header.scrolled{border-color:var(--border)}
   header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
   .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-  .brand-mark{width:36px;height:36px;flex:none}
+  .brand-mark{width:36px;height:36px;flex:none;display:block}
   .logo .name{font-family:var(--font-head);font-weight:800;font-size:18px;color:var(--charcoal);letter-spacing:-.3px}
   .logo .name b{color:var(--accent)}
   nav .nav-links{display:flex;gap:22px;align-items:center}
@@ -181,13 +183,10 @@
 <header id="siteHeader">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Inspiring Connections home">
-      <!-- Butterfly wings formed by two face profiles (concept locked in Brand Guide).
-           Swap for John's final IC logo asset when exported (see README). -->
-      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Inspiring Connections butterfly mark">
-        <path d="M20 8v24" stroke="#2D2D2D" stroke-width="1.4"/>
-        <path d="M20 12c-3-5-8-7-12-4s-3 9 1 12c-4 1-6 5-4 8s8 2 11-2c1-2 3-6 4-14z" fill="#1B9894"/>
-        <path d="M20 12c3-5 8-7 12-4s3 9-1 12c4 1 6 5 4 8s-8 2-11-2c-1-2-3-6-4-14z" fill="#E1702F"/>
-      </svg>
+      <!-- REAL IC LOGO: John's IC_logo_primary_circle.svg (from Google Drive),
+           the butterfly formed by two face profiles in a safe circle.
+           Served from this folder so it resolves when the folder is the Vercel root. -->
+      <img class="brand-mark" src="/ic-logo-circle.svg" alt="Inspiring Connections" width="36" height="36">
       <span class="name">Inspiring <b>Connections</b></span>
     </a>
     <nav>

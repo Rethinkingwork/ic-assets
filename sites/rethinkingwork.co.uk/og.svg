@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="smartreach — Outreach at scale, done like a human">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8943A"/>
+      <stop offset="55%" stop-color="#E1702F"/>
+      <stop offset="100%" stop-color="#B85820"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.18" transform="translate(820,150)" stroke="#FFFFFF" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="300" height="210" rx="24"/>
+    <path d="M14 26l136 96 136-96"/>
+  </g>
+  <g transform="translate(90,255)">
+    <text x="0" y="0" font-family="Montserrat, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#FDE3CF">BY RETHINKING WORK</text>
+    <text x="0" y="82" font-family="Montserrat, system-ui, sans-serif" font-size="84" font-weight="800" fill="#FFFFFF">smartreach</text>
+    <text x="0" y="150" font-family="'Open Sans', system-ui, sans-serif" font-size="34" fill="#FFF1E6">Outreach at scale, done like a human.</text>
+  </g>
+</svg>

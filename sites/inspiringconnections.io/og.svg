@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Inspiring Connections — Relationship intelligence">
+  <defs>
+    <radialGradient id="bg" cx="80%" cy="-20%" r="120%">
+      <stop offset="0%" stop-color="#1B9894"/>
+      <stop offset="45%" stop-color="#156E6B"/>
+      <stop offset="100%" stop-color="#10403F"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.12" transform="translate(880,315) scale(1.7)">
+    <path d="M0 -90c-48-54-120-72-168-40S-156 -10-100 8c-58 16-84 70-58 112s116 26 160-16c16-26 38-84 42-194z" fill="#EAF6F5"/>
+    <path d="M0 -90c48-54 120-72 168-40S156 -10 100 8c58 16 84 70 58 112s-116 26-160-16c-16-26-38-84-42-194z" fill="#EAF6F5"/>
+  </g>
+  <g transform="translate(90,250)">
+    <text x="0" y="0" font-family="Montserrat, system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="3" fill="#2BBDB6">RELATIONSHIP INTELLIGENCE</text>
+    <text x="0" y="80" font-family="Montserrat, system-ui, sans-serif" font-size="74" font-weight="800" fill="#FFFFFF">Inspiring Connections</text>
+    <text x="0" y="150" font-family="'Open Sans', system-ui, sans-serif" font-size="34" fill="#CFE9E7">Purposeful connection unlocks potential.</text>
+    <text x="0" y="200" font-family="'Open Sans', system-ui, sans-serif" font-size="30" fill="#9FCFCC">The tools tell you what. We tell you why.</text>
+  </g>
+</svg>
