@@ -60,10 +60,16 @@
 .anna-typing span:nth-child(2){animation-delay:.18s}.anna-typing span:nth-child(3){animation-delay:.36s}
 @keyframes anna-bob{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:.9}}
 
-.anna-cta{align-self:flex-start;margin-top:-2px}
+.anna-cta{align-self:flex-start;margin-top:-2px;display:flex;flex-direction:column;gap:6px}
 .anna-cta a,.anna-cta button{display:inline-block;font-family:var(--anna-head);font-weight:700;font-size:13.5px;
   text-decoration:none;cursor:pointer;border:none;background:var(--anna-accent);color:#fff;padding:10px 16px;border-radius:10px}
 .anna-cta a:hover,.anna-cta button:hover{background:var(--anna-accent-d)}
+/* Free intro note — shown beneath Connection Card CTAs (qualify→refer flow) */
+.anna-cta-note{font-size:12px;color:var(--anna-mute);font-style:italic;line-height:1.4;margin:0;padding:0 2px}
+/* Match signal — transient chip shown when network match detected */
+.anna-match-signal{align-self:flex-start;background:rgba(21,110,107,.12);border:1px solid rgba(21,110,107,.25);
+  color:var(--anna-teal);border-radius:10px;padding:8px 12px;font-size:13px;font-style:italic;
+  animation:anna-rise .3s ease;max-width:84%}
 
 .anna-foot{border-top:1px solid var(--anna-border);padding:10px;display:flex;gap:8px;align-items:flex-end;background:#fff}
 .anna-foot textarea{flex:1;resize:none;border:1px solid var(--anna-border);border-radius:12px;padding:10px 12px;
