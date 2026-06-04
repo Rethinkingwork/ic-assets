@@ -6,8 +6,12 @@ Anything needing those is logged here for orchestration to action. Newest first.
 
 ---
 
-## REQ-006 — Raster OG image per site (asset render, not backend)
-**Why:** each site's `og:image` is `og.svg`. LinkedIn / X / Facebook / WhatsApp do NOT
+## REQ-006 — Raster OG image per site (asset render, not backend) — ✅ DONE (orchestration, 2026-06-04)
+**Resolved by orchestration end-to-end:** rendered `og.svg`→`og.png` (1200×630, cairosvg) for all
+4 sites (commit `58c59e6`) AND repointed `og:image` + `twitter:image` to `/og.png` on each
+`index.html` (commit `9e04264`). SVG favicon left as-is (renders fine). Nothing left for this lane.
+
+**Original ask (for the record):** each site's `og:image` is `og.svg`. LinkedIn / X / Facebook / WhatsApp do NOT
 render SVG share images — so social shares currently show no card image, costing
 click-through on the "around the web" funnel. Needs a **1200×630 PNG/JPG** per site.
 **Blocker in this lane:** no SVG→raster tooling in the ic-assets build env (no
