@@ -6,6 +6,17 @@ Anything needing those is logged here for orchestration to action. Newest first.
 
 ---
 
+## REQ-006 — Raster OG image per site (asset render, not backend)
+**Why:** each site's `og:image` is `og.svg`. LinkedIn / X / Facebook / WhatsApp do NOT
+render SVG share images — so social shares currently show no card image, costing
+click-through on the "around the web" funnel. Needs a **1200×630 PNG/JPG** per site.
+**Blocker in this lane:** no SVG→raster tooling in the ic-assets build env (no
+rsvg-convert / ImageMagick / inkscape / sharp), so I can't render it here.
+**Ask:** render `og.svg` → `og.png` (1200×630) for each of the 4 sites and drop it in
+each folder; then I'll repoint `og:image` + `twitter:image` to `/og.png` (one-line edit
+per site). All other social/SEO meta (canonical, OG, Twitter card, JSON-LD, robots,
+sitemap) is already in place and validated.
+
 ## REQ-005 — Lead-capture endpoint + storage (`site-lead`)
 **Why:** every brand site now has an inline lead-capture form (the conversion moment
 for visitors who won't chat). It POSTs to
@@ -33,7 +44,7 @@ Return `{ ok: true }` on success (any non-2xx makes the form fall back to mailto
 When live, tell me and I'll confirm the endpoint URL in `capture.js` defaults (it's
 already set to the URL above — only needs confirming, not changing).
 
-## REQ-004 — Per-`site` voice + routing in the site-bot edge function
+## REQ-004 — Per-`site` voice + routing in the site-bot edge function — ✅ DONE (site-bot v4, 2026-06-04; verified: smartreach + schoolofthought reply on-brand)
 **Why:** the widget now ships on 4 brands, each sending a distinct `site` slug
 (`inspiringconnections`, `rethinkingwork-life`, `smartreach`, `schoolofthought`).
 The edge function currently runs ONE persona (IC / ANNA) for every site, so replies
@@ -47,14 +58,14 @@ set per brand:
 - `inspiringconnections` — unchanged (current ANNA prompt).
 Widget contract is already in place: `{ site, conversationId, message, meta }`.
 
-## REQ-003 — Persist the self-learning `meta` payload
+## REQ-003 — Persist the self-learning `meta` payload — ✅ DONE (site-bot v4, 2026-06-04)
 **Why:** the widget now sends a `meta` object each turn `{ path, referrer, ts, turn }`
 to seed the self-learning loop. The edge function currently ignores it.
 **Ask:** persist `meta` (e.g. fold into `cis_conversation_messages.context_snapshot`
 alongside the existing intent/cost snapshot). No schema change needed if it goes in the
 existing jsonb. This is the clean foundation for the self-learning loop.
 
-## REQ-002 — Opt-out write to `cis_suppression` (DEC-119)
+## REQ-002 — Opt-out write to `cis_suppression` (DEC-119) — ✅ DONE (site-bot v4, 2026-06-04)
 **Why:** the bot detects opt-out intent and currently honours it in conversation but
 persists nothing. `cis_suppression` already exists live (do NOT build a new table).
 **Ask:** when a site-bot turn returns `intent="opt_out"`, write a suppression row keyed
