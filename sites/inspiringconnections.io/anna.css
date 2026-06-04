@@ -1,0 +1,84 @@
+/* ANNA — the Inspiring Connections website bot widget.
+   Self-contained, no dependencies. Brand: IC teal + orange, Montserrat/Open Sans
+   (already loaded by the host page). Designed to be copied to the other three
+   brand sites: change the CONFIG block at the top of anna.js, nothing here. */
+
+.anna-root{
+  --anna-teal:#156E6B; --anna-teal-hi:#1B9894; --anna-accent:#E1702F;
+  --anna-accent-d:#B85820; --anna-ink:#2D2D2D; --anna-mute:#5A5A5A;
+  --anna-border:#E6E2D8; --anna-bg:#FDFCF8; --anna-bot:#EAF6F5;
+  --anna-head:'Montserrat',system-ui,sans-serif;
+  --anna-body:'Open Sans',system-ui,sans-serif;
+  position:fixed; right:20px; bottom:20px; z-index:2147483000;
+  font-family:var(--anna-body);
+}
+.anna-root *{box-sizing:border-box}
+
+/* launcher */
+.anna-launch{
+  display:flex; align-items:center; gap:10px; cursor:pointer; border:none;
+  background:var(--anna-teal); color:#fff; font-family:var(--anna-head);
+  font-weight:700; font-size:15px; padding:13px 20px; border-radius:30px;
+  box-shadow:0 10px 30px rgba(21,110,107,.34); transition:transform .18s ease,background .18s ease;
+}
+.anna-launch:hover{background:var(--anna-teal-hi); transform:translateY(-2px)}
+.anna-launch svg{width:20px;height:20px;flex:none}
+.anna-launch .anna-dot{width:8px;height:8px;border-radius:50%;background:#7CF5D9;box-shadow:0 0 0 0 rgba(124,245,217,.7);animation:anna-pulse 2.4s infinite}
+@keyframes anna-pulse{0%{box-shadow:0 0 0 0 rgba(124,245,217,.6)}70%{box-shadow:0 0 0 7px rgba(124,245,217,0)}100%{box-shadow:0 0 0 0 rgba(124,245,217,0)}}
+
+/* panel */
+.anna-panel{
+  position:absolute; right:0; bottom:0; width:380px; max-width:calc(100vw - 32px);
+  height:560px; max-height:calc(100vh - 40px); background:var(--anna-bg);
+  border:1px solid var(--anna-border); border-radius:20px; overflow:hidden;
+  display:none; flex-direction:column; box-shadow:0 24px 60px rgba(20,40,40,.28);
+}
+.anna-root.open .anna-panel{display:flex; animation:anna-rise .22s ease}
+.anna-root.open .anna-launch{display:none}
+@keyframes anna-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.anna-head{
+  background:radial-gradient(120% 140% at 85% -20%,var(--anna-teal-hi),var(--anna-teal) 60%,#10403f);
+  color:#EAF6F5; padding:16px 18px; display:flex; align-items:center; gap:12px;
+}
+.anna-head .anna-mark{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);
+  display:flex;align-items:center;justify-content:center;flex:none}
+.anna-head .anna-mark svg{width:22px;height:22px;color:#fff}
+.anna-head h3{font-family:var(--anna-head);font-weight:800;font-size:16px;color:#fff;letter-spacing:-.2px;line-height:1.1}
+.anna-head p{font-size:12.5px;color:#CFE9E7;margin-top:1px}
+.anna-close{margin-left:auto;background:none;border:none;color:#CFE9E7;cursor:pointer;padding:4px;border-radius:6px}
+.anna-close:hover{color:#fff;background:rgba(255,255,255,.12)}
+.anna-close svg{width:20px;height:20px;display:block}
+
+.anna-log{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:12px}
+.anna-msg{max-width:84%;padding:11px 14px;border-radius:14px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.anna-msg.bot{background:var(--anna-bot);color:var(--anna-ink);border-bottom-left-radius:4px;align-self:flex-start}
+.anna-msg.me{background:var(--anna-teal);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+
+.anna-typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;background:var(--anna-bot);border-radius:14px;border-bottom-left-radius:4px}
+.anna-typing span{width:7px;height:7px;border-radius:50%;background:var(--anna-teal);opacity:.5;animation:anna-bob 1.2s infinite}
+.anna-typing span:nth-child(2){animation-delay:.18s}.anna-typing span:nth-child(3){animation-delay:.36s}
+@keyframes anna-bob{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:.9}}
+
+.anna-cta{align-self:flex-start;margin-top:-2px}
+.anna-cta a,.anna-cta button{display:inline-block;font-family:var(--anna-head);font-weight:700;font-size:13.5px;
+  text-decoration:none;cursor:pointer;border:none;background:var(--anna-accent);color:#fff;padding:10px 16px;border-radius:10px}
+.anna-cta a:hover,.anna-cta button:hover{background:var(--anna-accent-d)}
+
+.anna-foot{border-top:1px solid var(--anna-border);padding:10px;display:flex;gap:8px;align-items:flex-end;background:#fff}
+.anna-foot textarea{flex:1;resize:none;border:1px solid var(--anna-border);border-radius:12px;padding:10px 12px;
+  font-family:var(--anna-body);font-size:14px;line-height:1.4;max-height:90px;color:var(--anna-ink);outline:none}
+.anna-foot textarea:focus{border-color:var(--anna-teal-hi)}
+.anna-send{flex:none;background:var(--anna-teal);border:none;color:#fff;width:40px;height:40px;border-radius:11px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.anna-send:hover{background:var(--anna-teal-hi)}.anna-send:disabled{opacity:.45;cursor:default}
+.anna-send svg{width:18px;height:18px}
+.anna-note{font-size:11px;color:var(--anna-mute);text-align:center;padding:0 10px 9px;background:#fff}
+
+@media(max-width:480px){
+  .anna-root{right:12px;bottom:12px}
+  .anna-panel{width:calc(100vw - 24px);height:calc(100vh - 24px);max-height:calc(100vh - 24px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .anna-root.open .anna-panel,.anna-launch{animation:none;transition:none}
+  .anna-dot,.anna-typing span{animation:none}
+}

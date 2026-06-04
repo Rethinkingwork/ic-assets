@@ -51,6 +51,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/anna.css">
 
 <style>
   :root{
@@ -194,7 +195,7 @@
         <a href="#loop">How it works</a>
         <a href="#ericanna">ERIC + ANNA</a>
         <a href="#trust">Trust</a>
-        <a class="cta" href="#cta">Let's talk</a>
+        <a class="cta" href="#cta" onclick="ANNA.open();return false;">Let's talk</a>
       </div>
     </nav>
   </div>
@@ -214,7 +215,7 @@
       <h1>Purposeful connection unlocks <em>potential</em>.</h1>
       <p class="lead">Inspiring Connections turns your network into real understanding — who matters, why, and how to genuinely help. Fewer, better connections. Human-led, AI-assisted, built on trust.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#cta">Start a conversation</a>
+        <a class="btn btn-primary" href="#cta" onclick="ANNA.open();return false;">Start a conversation</a>
         <a class="btn btn-light" href="#loop">See how it works</a>
       </div>
     </div>
@@ -360,7 +361,7 @@
       <div class="final reveal">
         <h2>Let's make your next connection count.</h2>
         <p>Whether you're looking for the right partners or want your network to finally work for you — start with a conversation. No pitch. Just genuine interest in what you're trying to do.</p>
-        <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=Inspiring%20Connections%20—%20let's%20talk">Start a conversation</a>
+        <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=Inspiring%20Connections%20—%20let's%20talk" onclick="ANNA.open();return false;">Start a conversation</a>
       </div>
     </div>
   </section>
@@ -383,5 +384,7 @@
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
 })();
 </script>
+<!-- ANNA — conversational front door (talks to the site-bot edge function) -->
+<script src="/anna.js" defer></script>
 </body>
 </html>
