@@ -17,7 +17,19 @@ each folder; then I'll repoint `og:image` + `twitter:image` to `/og.png` (one-li
 per site). All other social/SEO meta (canonical, OG, Twitter card, JSON-LD, robots,
 sitemap) is already in place and validated.
 
-## REQ-005 — Lead-capture endpoint + storage (`site-lead`)
+## REQ-005 — Lead-capture endpoint + storage (`site-lead`) — ✅ DONE + FRONT-END VERIFIED (2026-06-04)
+**Verification (against the live endpoint, byte-exact `capture.js` request — Content-Type only, no apikey):**
+- Valid payload → **HTTP 200 `{ok:true}`**. Same email again → **200** (idempotent).
+- `consent:false` → **400 `{ok:false,"error":"consent required"}`** → front-end mailto fallback fires (lossless).
+- CORS preflight from `https://inspiringconnections.io` → **200**, `Access-Control-Allow-Origin: *`. Browser fetch will succeed.
+- No front-end change needed; `capture.js` endpoint/headers/body already match. The anon
+  apikey is NOT required (gateway accepts no-apikey on verify_jwt=false, same as site-bot).
+- **Test rows written** during verification: `anna-formtest@example.com` (×1 contact,
+  idempotent) — please purge alongside the earlier Sarah test rows.
+- **Watch-item:** if the function gateway is ever switched to require the apikey header,
+  BOTH widgets (`site-bot` + `site-lead`/`capture.js`) must add it together — neither sends it today.
+
+## REQ-005 (original ask, for the record) — Lead-capture endpoint + storage (`site-lead`)
 **Why:** every brand site now has an inline lead-capture form (the conversion moment
 for visitors who won't chat). It POSTs to
 `https://kntrbfrhajtvbuupyntu.supabase.co/functions/v1/site-lead`. That function does
