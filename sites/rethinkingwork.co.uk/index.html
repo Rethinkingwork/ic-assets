@@ -47,6 +47,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/anna.css">
+<link rel="stylesheet" href="/capture.css">
 
 <style>
   :root{
@@ -262,6 +263,7 @@
       <h2>Outreach worth replying to.</h2>
       <p>If you need pipeline but can't stomach the spam, let's talk. We'll show you what smart, human outreach looks like at the volume your business actually needs.</p>
       <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=smartreach%20—%20let's%20talk" onclick="ANNA.open();return false;">Start a conversation</a>
+      <div class="lead-capture" style="margin-top:30px"></div>
     </div>
   </section>
 </main>
@@ -292,5 +294,18 @@ window.ANNA_CONFIG = {
 };
 </script>
 <script src="/anna.js" defer></script>
+<!-- Lead capture — inline form (shared component; per-site config below) -->
+<script>
+window.LEAD_CONFIG = {
+  site: "smartreach",
+  leadType: "smartreach",
+  title: "See SmartReach in action",
+  sub: "Tell us who you're after. We'll show you how it'd work.",
+  messageLabel: "Who are you trying to reach, and at what scale?",
+  messagePlaceholder: "Roles, sectors, rough numbers — whatever you've got.",
+  submitLabel: "Show me SmartReach"
+};
+</script>
+<script src="/capture.js" defer></script>
 </body>
 </html>

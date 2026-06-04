@@ -52,6 +52,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/anna.css">
+<link rel="stylesheet" href="/capture.css">
 
 <style>
   :root{
@@ -362,6 +363,7 @@
         <h2>Let's make your next connection count.</h2>
         <p>Whether you're looking for the right partners or want your network to finally work for you — start with a conversation. No pitch. Just genuine interest in what you're trying to do.</p>
         <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=Inspiring%20Connections%20—%20let's%20talk" onclick="ANNA.open();return false;">Start a conversation</a>
+        <div class="lead-capture" style="margin-top:30px"></div>
       </div>
     </div>
   </section>
@@ -386,5 +388,18 @@
 </script>
 <!-- ANNA — conversational front door (talks to the site-bot edge function) -->
 <script src="/anna.js" defer></script>
+<!-- Lead capture — inline form (shared component; per-site config below) -->
+<script>
+window.LEAD_CONFIG = {
+  site: "inspiringconnections",
+  leadType: "connection",
+  title: "Tell us who you're trying to reach",
+  sub: "No pitch. Just a real reply from John.",
+  messageLabel: "What would a brilliant connection look like?",
+  messagePlaceholder: "Who you'd love to meet, or what you're trying to make happen.",
+  submitLabel: "Send it to John"
+};
+</script>
+<script src="/capture.js" defer></script>
 </body>
 </html>

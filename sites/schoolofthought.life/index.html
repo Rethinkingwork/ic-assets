@@ -51,6 +51,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/anna.css">
+<link rel="stylesheet" href="/capture.css">
 
 <style>
   /* Self-contained styles so the page works standalone on Vercel.
@@ -268,6 +269,7 @@
       <p>If you've been meaning to step back and think something through properly — a decision, a direction, or just the fog of it all — this is an open invitation.</p>
       <div class="cta">
         <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=School%20of%20Thought%20—%20a%20conversation" onclick="ANNA.open();return false;">Start a conversation</a>
+        <div class="lead-capture" style="margin-top:30px"></div>
       </div>
     </div>
   </section>
@@ -300,5 +302,18 @@ window.ANNA_CONFIG = {
 };
 </script>
 <script src="/anna.js" defer></script>
+<!-- Lead capture — inline form (shared component; per-site config below) -->
+<script>
+window.LEAD_CONFIG = {
+  site: "schoolofthought",
+  leadType: "thinking_partner",
+  title: "Make some time to think",
+  sub: "No agenda. Just tell John what's on your mind.",
+  messageLabel: "What would you like to think through?",
+  messagePlaceholder: "A decision, a knot you can't untangle, a what-next…",
+  submitLabel: "Start a conversation"
+};
+</script>
+<script src="/capture.js" defer></script>
 </body>
 </html>

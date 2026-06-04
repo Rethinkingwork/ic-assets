@@ -6,6 +6,33 @@ Anything needing those is logged here for orchestration to action. Newest first.
 
 ---
 
+## REQ-005 — Lead-capture endpoint + storage (`site-lead`)
+**Why:** every brand site now has an inline lead-capture form (the conversion moment
+for visitors who won't chat). It POSTs to
+`https://kntrbfrhajtvbuupyntu.supabase.co/functions/v1/site-lead`. That function does
+not exist yet, so the form currently **falls back to a prefilled mailto** to
+`john@rethinkingwork.life` (no lead lost). The day the endpoint ships, the forms work
+with zero front-end change.
+**Ask:** build the `site-lead` edge function (verify_jwt=false, CORS, like site-bot) that
+accepts the payload below and stores the lead — ideally via the SAME create-or-resolve
+contact + engagement path the bot uses (source=`ic_website`/`<site>`, source_type=IC,
+butterfly_stage=`signal`), so chat-leads and form-leads land in one place. Honour DEC-119
+(check `cis_suppression` before storing/contacting). British English in any reply copy.
+**Payload the form sends:**
+```json
+{
+  "site": "inspiringconnections|rethinkingwork-life|smartreach|schoolofthought",
+  "lead_type": "connection|people_strategy|smartreach|thinking_partner",
+  "name": "…", "email": "…", "message": "…",
+  "consent": true,
+  "path": "/", "referrer": "https://…|null",
+  "ts": "2026-06-04T…Z"
+}
+```
+Return `{ ok: true }` on success (any non-2xx makes the form fall back to mailto).
+When live, tell me and I'll confirm the endpoint URL in `capture.js` defaults (it's
+already set to the URL above — only needs confirming, not changing).
+
 ## REQ-004 — Per-`site` voice + routing in the site-bot edge function
 **Why:** the widget now ships on 4 brands, each sending a distinct `site` slug
 (`inspiringconnections`, `rethinkingwork-life`, `smartreach`, `schoolofthought`).

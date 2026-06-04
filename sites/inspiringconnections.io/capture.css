@@ -1,0 +1,54 @@
+/* Lead capture — shared inline form for the Rethinking Work family sites.
+   Self-contained, no dependencies, brand-tintable. One identical capture.js +
+   capture.css ships to every site; per-site fields/copy live in a
+   window.LEAD_CONFIG block in each page. Mounts into <div class="lead-capture">. */
+
+.lead-capture{
+  --lc-teal:#156E6B; --lc-teal-hi:#1B9894; --lc-accent:#E1702F; --lc-accent-d:#B85820;
+  --lc-ink:#2D2D2D; --lc-mute:#5A5A5A; --lc-border:#E6E2D8; --lc-bg:#FFFFFE;
+  --lc-head:'Montserrat',system-ui,sans-serif; --lc-body:'Open Sans',system-ui,sans-serif;
+  max-width:520px; margin:0 auto; text-align:left;
+}
+.lead-capture *{box-sizing:border-box}
+
+.lc-card{background:var(--lc-bg);border:1px solid var(--lc-border);border-radius:18px;
+  padding:clamp(22px,4vw,32px);box-shadow:0 14px 36px rgba(20,40,40,.10)}
+.lc-card h3{font-family:var(--lc-head);font-weight:800;font-size:clamp(20px,3vw,24px);
+  color:var(--lc-ink);letter-spacing:-.4px;line-height:1.15;margin:0 0 6px}
+.lc-card .lc-sub{font-family:var(--lc-body);color:var(--lc-mute);font-size:15.5px;margin:0 0 18px}
+
+.lc-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.lc-field label{font-family:var(--lc-head);font-weight:600;font-size:13px;color:var(--lc-ink)}
+.lc-field input,.lc-field textarea{font-family:var(--lc-body);font-size:16px;color:var(--lc-ink);
+  background:#fff;border:1px solid var(--lc-border);border-radius:10px;padding:11px 13px;width:100%;outline:none}
+.lc-field input:focus,.lc-field textarea:focus{border-color:var(--lc-teal-hi);box-shadow:0 0 0 3px rgba(27,152,148,.12)}
+.lc-field textarea{resize:vertical;min-height:84px}
+.lc-field.lc-bad input,.lc-field.lc-bad textarea{border-color:#C0392B}
+.lc-err{color:#C0392B;font-size:12.5px;font-family:var(--lc-body);display:none}
+.lc-field.lc-bad .lc-err{display:block}
+
+/* honeypot — visually hidden, off-screen, not display:none (bots skip those) */
+.lc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.lc-consent{display:flex;gap:10px;align-items:flex-start;margin:4px 0 18px}
+.lc-consent input{margin-top:3px;flex:none;width:16px;height:16px;accent-color:var(--lc-teal)}
+.lc-consent label{font-family:var(--lc-body);font-size:13px;color:var(--lc-mute);line-height:1.5}
+
+.lc-submit{font-family:var(--lc-head);font-weight:700;font-size:15px;cursor:pointer;border:none;
+  background:var(--lc-accent);color:#fff;padding:14px 24px;border-radius:12px;width:100%;
+  transition:background .18s ease,transform .18s ease}
+.lc-submit:hover{background:var(--lc-accent-d);transform:translateY(-1px)}
+.lc-submit:disabled{opacity:.55;cursor:default;transform:none}
+
+.lc-alt{text-align:center;font-family:var(--lc-body);font-size:13.5px;color:var(--lc-mute);margin-top:13px}
+.lc-alt a{color:var(--lc-teal);font-weight:600;text-decoration:none;cursor:pointer}
+.lc-alt a:hover{text-decoration:underline}
+
+.lc-done{text-align:center;padding:14px 6px}
+.lc-done .lc-tick{width:46px;height:46px;border-radius:50%;background:var(--lc-teal);color:#fff;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.lc-done .lc-tick svg{width:24px;height:24px}
+.lc-done h3{font-family:var(--lc-head);font-weight:800;font-size:21px;color:var(--lc-ink);margin:0 0 6px}
+.lc-done p{font-family:var(--lc-body);color:var(--lc-mute);font-size:15px;margin:0}
+
+@media (prefers-reduced-motion:reduce){.lc-submit{transition:none}}
