@@ -46,6 +46,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/anna.css">
 
 <style>
   :root{
@@ -171,7 +172,7 @@
       <h1>Reach <em>thousands</em>. Sound like one human.</h1>
       <p class="lead">smartreach is high-volume email outreach that doesn't read like spam. Smart targeting, relevant messaging and genuinely consultative conversation — at the scale your pipeline actually needs.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#cta">Start a conversation</a>
+        <a class="btn btn-primary" href="#cta" onclick="ANNA.open();return false;">Start a conversation</a>
         <a class="btn btn-ghost" href="#how">How it works</a>
       </div>
     </div>
@@ -260,7 +261,7 @@
     <div class="wrap final reveal">
       <h2>Outreach worth replying to.</h2>
       <p>If you need pipeline but can't stomach the spam, let's talk. We'll show you what smart, human outreach looks like at the volume your business actually needs.</p>
-      <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=smartreach%20—%20let's%20talk">Start a conversation</a>
+      <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=smartreach%20—%20let's%20talk" onclick="ANNA.open();return false;">Start a conversation</a>
     </div>
   </section>
 </main>
@@ -281,5 +282,15 @@
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
 })();
 </script>
+<!-- ANNA — conversational front door (shared widget; per-site config below) -->
+<script>
+window.ANNA_CONFIG = {
+  site: "smartreach",
+  launcherLabel: "Ask about smartreach",
+  subtitle: "smartreach — outreach, done like a human",
+  opener: "Hello — I'm ANNA. smartreach is how we do outreach at scale without sounding like a robot. No hard sell — what are you trying to reach people about, and how's it going so far?"
+};
+</script>
+<script src="/anna.js" defer></script>
 </body>
 </html>

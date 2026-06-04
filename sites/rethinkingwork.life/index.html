@@ -39,6 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/anna.css">
 
 <style>
   :root{
@@ -188,7 +189,7 @@
       <div class="three"><span>Recruit.</span><span>Retain.</span><span>Realise.</span></div>
       <p class="lead">Rethinking Work helps leaders get the people part right — finding the right people, keeping them, and unleashing what they're actually capable of. Because teams outperform companies. Always have, always will.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#cta">Book a conversation</a>
+        <a class="btn btn-primary" href="#cta" onclick="ANNA.open();return false;">Book a conversation</a>
         <a class="btn btn-ghost" href="#spine">See the approach</a>
       </div>
     </div>
@@ -282,7 +283,7 @@
     <div class="wrap final reveal">
       <h2>Let's rethink the people part.</h2>
       <p>Whether you're hiring, holding on to good people, or trying to get the best out of the team you've got — start with a conversation. No pitch, no deck. Just thinking, together.</p>
-      <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=Rethinking%20Work%20—%20let's%20talk">Book a conversation</a>
+      <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=Rethinking%20Work%20—%20let's%20talk" onclick="ANNA.open();return false;">Book a conversation</a>
     </div>
   </section>
 </main>
@@ -306,5 +307,15 @@
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
 })();
 </script>
+<!-- ANNA — conversational front door (shared widget; per-site config below) -->
+<script>
+window.ANNA_CONFIG = {
+  site: "rethinkingwork-life",
+  launcherLabel: "Have a chat",
+  subtitle: "the human side of Rethinking Work",
+  opener: "Hello — I'm ANNA, John's right hand at Rethinking Work. We help leaders get the best from their people, minus the corporate waffle. No pitch — what's on your mind about your team, your culture, or your hiring just now?"
+};
+</script>
+<script src="/anna.js" defer></script>
 </body>
 </html>

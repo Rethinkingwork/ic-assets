@@ -1,28 +1,53 @@
 # ANNA — shared website bot widget
 
-The conversational front door for the IC family of sites. Vanilla JS + CSS, no
-build step. Talks to the `site-bot` Supabase edge function (Haiku, one LLM call
-per turn; transcript + qualified engagements written back to Supabase).
+The conversational front door for the Rethinking Work family of sites. Vanilla
+JS + CSS, no build step. Talks to the orchestration-owned `site-bot` Supabase
+edge function (Haiku, one LLM call per turn; transcript + qualified engagements
+written back server-side).
 
-## What's here
-- `anna.js`  — the widget (launcher, panel, turn loop, CTA rendering).
+## What's here (canonical copies)
+- `anna.js`  — the widget (launcher, panel, turn loop, CTA rendering, client-side
+  rate-limit, self-learning `meta` capture, optional per-site brand tint).
 - `anna.css` — brand-styled (IC teal/orange; uses the host page's Montserrat/Open Sans).
 
-These are the **canonical** copies. Each site serves its own copy from its Vercel
-root folder (per-site root dirs mean a parent `shared/` folder is not served).
+`anna.js` ships **identical** to every site. Per-site differences live in a small
+`window.ANNA_CONFIG` block in each page — nothing in these two files changes per site.
+
+## Live on
+- `inspiringconnections.io` — uses the built-in IC defaults (no config block needed).
+- `rethinkingwork.life`, `rethinkingwork.co.uk` (smartreach), `schoolofthought.life`
+  — each carries a `window.ANNA_CONFIG` block (site slug, opener, subtitle, launcher).
 
 ## Cloning to another site (the recipe)
-1. Copy `anna.js` + `anna.css` into that site's folder (e.g. `sites/rethinkingwork.life/`).
-2. In the copied `anna.js`, edit the `CONFIG` block at the top:
-   - `site` — a short slug (used for attribution + the session key).
-   - `subtitle`, `opener`, `launcherLabel` — per-brand voice.
-   - `endpoint` — leave as-is (one shared edge function serves every site;
-     `site` distinguishes them). Override per-site brand colours in `anna.css`
-     `.anna-root` custom properties if the palette differs.
-3. In that site's `index.html`: add `<link rel="stylesheet" href="/anna.css">` in
-   `<head>`, `<script src="/anna.js" defer></script>` before `</body>`, and add
-   `onclick="ANNA.open();return false;"` to the page's primary CTA buttons.
+1. Copy `anna.js` + `anna.css` into that site's folder (per-site Vercel root dirs mean a
+   parent `shared/` folder is not served, so each site serves its own copy).
+2. In that site's `index.html`:
+   - `<link rel="stylesheet" href="/anna.css">` in `<head>`.
+   - Before `</body>`, a config block then the script:
+     ```html
+     <script>
+     window.ANNA_CONFIG = {
+       site: "your-slug",                 // distinguishes the site server-side
+       launcherLabel: "Chat to ANNA",
+       subtitle: "one warm line",
+       opener: "The first thing ANNA says (client-side, costs nothing).",
+       // optional: brand: { primary:"#…", primaryHi:"#…", accent:"#…", accentD:"#…" }
+     };
+     </script>
+     <script src="/anna.js" defer></script>
+     ```
+   - Add `onclick="ANNA.open();return false;"` to the page's primary CTA buttons.
+3. The `endpoint` defaults to the shared edge function — leave it. The `site` slug is
+   how the backend tells the brands apart.
 
-## Backend
-Edge function source: `cis-data-pipeline/supabase/functions/site-bot/index.ts`.
-Model + provider are env-driven (`SITE_BOT_MODEL`, `LLM_PROVIDER`) per DEC-102.
+## IMPORTANT — per-site VOICE is server-side
+The opener is client-side (per brand, free). Every **reply after that** comes from the
+`site-bot` edge function, which today runs ONE persona (IC / ANNA) for all sites. Until
+orchestration adds per-`site` system prompts + routing, replies on the non-IC sites will
+speak in the IC default voice. Tracked in `ic-assets/REQUESTS-TO-ORCHESTRATION.md`.
+
+## Backend (owned by orchestration, not this repo)
+Edge function: `cis-data-pipeline/supabase/functions/site-bot/index.ts`.
+Model/provider env-driven (`SITE_BOT_MODEL`, `LLM_PROVIDER`) per DEC-102.
+Anything needing the backend, DB, env, a DEC, or domain mapping → write it to
+`ic-assets/REQUESTS-TO-ORCHESTRATION.md`; orchestration actions it.

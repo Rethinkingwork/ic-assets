@@ -50,6 +50,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/anna.css">
 
 <style>
   /* Self-contained styles so the page works standalone on Vercel.
@@ -186,7 +187,7 @@
       <h1>Create the time and space to <em>think</em>.</h1>
       <p class="lead">School of Thought is a thinking partner. Somewhere to step away from the noise, explore what's really on your mind, and find your way back to what matters.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#invite">Start a conversation</a>
+        <a class="btn btn-primary" href="#invite" onclick="ANNA.open();return false;">Start a conversation</a>
         <a class="btn btn-ghost" href="#ethos">What this is</a>
       </div>
     </div>
@@ -266,7 +267,7 @@
       <h2>Give yourself permission to think</h2>
       <p>If you've been meaning to step back and think something through properly — a decision, a direction, or just the fog of it all — this is an open invitation.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=School%20of%20Thought%20—%20a%20conversation">Start a conversation</a>
+        <a class="btn btn-primary" href="mailto:john@rethinkingwork.life?subject=School%20of%20Thought%20—%20a%20conversation" onclick="ANNA.open();return false;">Start a conversation</a>
       </div>
     </div>
   </section>
@@ -289,5 +290,15 @@
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
 })();
 </script>
+<!-- ANNA — conversational front door (shared widget; per-site config below) -->
+<script>
+window.ANNA_CONFIG = {
+  site: "schoolofthought",
+  launcherLabel: "Start a conversation",
+  subtitle: "School of Thought — a thinking partner",
+  opener: "Hello — I'm ANNA. School of Thought is simply time and space to think, with someone in your corner. No agenda — what's been taking up room in your head lately?"
+};
+</script>
+<script src="/anna.js" defer></script>
 </body>
 </html>

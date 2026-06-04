@@ -67,7 +67,7 @@
 
 .anna-foot{border-top:1px solid var(--anna-border);padding:10px;display:flex;gap:8px;align-items:flex-end;background:#fff}
 .anna-foot textarea{flex:1;resize:none;border:1px solid var(--anna-border);border-radius:12px;padding:10px 12px;
-  font-family:var(--anna-body);font-size:14px;line-height:1.4;max-height:90px;color:var(--anna-ink);outline:none}
+  font-family:var(--anna-body);font-size:16px;line-height:1.4;max-height:90px;color:var(--anna-ink);outline:none}
 .anna-foot textarea:focus{border-color:var(--anna-teal-hi)}
 .anna-send{flex:none;background:var(--anna-teal);border:none;color:#fff;width:40px;height:40px;border-radius:11px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .anna-send:hover{background:var(--anna-teal-hi)}.anna-send:disabled{opacity:.45;cursor:default}
@@ -75,8 +75,9 @@
 .anna-note{font-size:11px;color:var(--anna-mute);text-align:center;padding:0 10px 9px;background:#fff}
 
 @media(max-width:480px){
-  .anna-root{right:12px;bottom:12px}
-  .anna-panel{width:calc(100vw - 24px);height:calc(100vh - 24px);max-height:calc(100vh - 24px)}
+  .anna-root{right:12px;bottom:max(12px,env(safe-area-inset-bottom))}
+  .anna-panel{width:calc(100vw - 24px);height:calc(100dvh - 24px);max-height:calc(100dvh - 24px)}
+  .anna-note{padding-bottom:max(9px,env(safe-area-inset-bottom))}
 }
 @media (prefers-reduced-motion:reduce){
   .anna-root.open .anna-panel,.anna-launch{animation:none;transition:none}
