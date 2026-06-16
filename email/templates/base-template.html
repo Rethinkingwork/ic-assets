@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light only">
+  <meta name="supported-color-schemes" content="light only">
+  <title>{{subject}}</title>
+  <!--[if mso]>
+  <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+  <![endif]-->
+  <style>
+    /* Progressive enhancement only — every critical style is also inlined below,
+       because Gmail/Outlook strip or partially honour <style>. Keep this minimal. */
+    body { margin:0 !important; padding:0 !important; width:100% !important; }
+    table { border-collapse:collapse !important; }
+    img { border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
+    a { color:#156E6B; }
+    /* Mobile */
+    @media only screen and (max-width:620px) {
+      .ic-container { width:100% !important; }
+      .ic-px { padding-left:24px !important; padding-right:24px !important; }
+      .ic-h1 { font-size:26px !important; line-height:1.18 !important; }
+      .ic-btn-a { display:block !important; }
+    }
+    /* Honour dark mode without inverting the cream identity */
+    @media (prefers-color-scheme: dark) {
+      body, .ic-bg { background:#0f2624 !important; }
+    }
+  </style>
+</head>
+<!--
+  ============================================================================
+  IC EMAIL — BASE TEMPLATE  (Inspiring Connections house style)
+  ----------------------------------------------------------------------------
+  Brand: Teal #1B9894 · Deep Teal #156E6B · Orange #E1702F · Cream #F8F7F4 ·
+         Charcoal #2D2D2D. Headings Montserrat, body Open Sans (with safe
+         web-font fallbacks — mail clients without the font fall back to Arial/
+         Helvetica gracefully). ~600px, table layout, all CSS inlined.
+
+  HOW TO USE
+    Copy this file, then replace the {{...}} merge fields and swap the body
+    block (between BODY START / BODY END) for your message. Everything else —
+    header logo, button style, footer, unsubscribe — stays put so every email
+    in the programme looks identical.
+
+  MERGE FIELDS (substitute at send time)
+    {{subject}}          — used in <title> and as the preheader fallback
+    {{preheader}}        — inbox preview text (40–90 chars; hidden in body)
+    {{first_name}}       — recipient first name (fallback: "there")
+    {{cta_url}}          — primary button link
+    {{cta_label}}        — primary button text
+    {{score}}            — e.g. a scorecard result, where relevant
+    {{unsubscribe_url}}  — REQUIRED. One-click unsubscribe (cis-unsub token URL)
+    {{year}}             — current year for the footer
+
+  LOGO: public HTTPS PNG served by the live brand site (renders in every client,
+  unlike a Drive/attached image). Swap per brand:
+    IC  → https://inspiringconnections.io/logo-email-horizontal.png
+    RW  → https://rethinkingwork.life/logo-email.png
+  ============================================================================
+-->
+<body style="margin:0; padding:0; background-color:#F8F7F4; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+  <!-- Preheader: shows in the inbox preview, hidden in the body. -->
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#F8F7F4; opacity:0;">
+    {{preheader}}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </div>
+
+  <!-- Full-bleed cream background -->
+  <table role="presentation" class="ic-bg" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F7F4;">
+    <tr>
+      <td align="center" style="padding:24px 12px 40px 12px;">
+
+        <!-- 600px container -->
+        <table role="presentation" class="ic-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
+
+          <!-- ───── HEADER ───── -->
+          <tr>
+            <td style="padding:8px 8px 20px 8px;">
+              <a href="https://inspiringconnections.io" target="_blank" style="text-decoration:none;">
+                <img src="https://inspiringconnections.io/logo-email-horizontal.png"
+                     width="220" height="55" alt="Inspiring Connections"
+                     style="display:block; width:220px; height:auto; border:0;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- ───── CARD ───── -->
+          <tr>
+            <td style="background-color:#FFFFFE; border:1px solid #E6E2D8; border-radius:16px; overflow:hidden;">
+
+              <!-- Teal accent rule across the top of the card -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td style="height:4px; background-color:#1B9894; font-size:0; line-height:0;">&nbsp;</td></tr>
+              </table>
+
+              <!-- ===================== BODY START ===================== -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="ic-px" style="padding:36px 40px 8px 40px;">
+                    <p style="margin:0 0 6px 0; font-family:'Montserrat',Arial,Helvetica,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1B9894;">
+                      {{eyebrow}}
+                    </p>
+                    <h1 class="ic-h1" style="margin:0 0 16px 0; font-family:'Montserrat',Arial,Helvetica,sans-serif; font-size:30px; line-height:1.15; font-weight:800; letter-spacing:-0.5px; color:#2D2D2D;">
+                      {{headline}}
+                    </h1>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ic-px" style="padding:0 40px 8px 40px; font-family:'Open Sans',Arial,Helvetica,sans-serif; font-size:16px; line-height:1.65; color:#3a3a3a;">
+                    <p style="margin:0 0 16px 0;">Hi {{first_name}},</p>
+
+                    <!-- Replace these paragraphs with your message. -->
+                    <p style="margin:0 0 16px 0;">{{paragraph_1}}</p>
+                    <p style="margin:0 0 16px 0;">{{paragraph_2}}</p>
+                  </td>
+                </tr>
+
+                <!-- Primary CTA button (bulletproof / VML for Outlook) -->
+                <tr>
+                  <td class="ic-px" style="padding:12px 40px 16px 40px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td align="center" bgcolor="#E1702F" style="border-radius:12px;">
+                          <!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{cta_url}}" style="height:48px;v-text-anchor:middle;width:260px;" arcsize="25%" strokecolor="#E1702F" fillcolor="#E1702F">
+                          <w:anchorlock/>
+                          <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">{{cta_label}}</center>
+                          </v:roundrect>
+                          <![endif]-->
+                          <!--[if !mso]><!-- -->
+                          <a class="ic-btn-a" href="{{cta_url}}" target="_blank"
+                             style="display:inline-block; font-family:'Montserrat',Arial,Helvetica,sans-serif; font-size:15px; font-weight:700; color:#ffffff; text-decoration:none; padding:15px 30px; border-radius:12px; background-color:#E1702F;">
+                            {{cta_label}}
+                          </a>
+                          <!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Optional secondary line under the button -->
+                <tr>
+                  <td class="ic-px" style="padding:0 40px 36px 40px; font-family:'Open Sans',Arial,Helvetica,sans-serif; font-size:14px; line-height:1.6; color:#7A7A7A;">
+                    <p style="margin:0;">{{ps_line}}</p>
+                  </td>
+                </tr>
+              </table>
+              <!-- ===================== BODY END ===================== -->
+
+            </td>
+          </tr>
+
+          <!-- ───── SIGN-OFF ───── -->
+          <tr>
+            <td class="ic-px" style="padding:28px 8px 4px 8px; font-family:'Open Sans',Arial,Helvetica,sans-serif; font-size:16px; line-height:1.6; color:#3a3a3a;">
+              <p style="margin:0 0 2px 0;">Warmly,</p>
+              <p style="margin:0; font-family:'Montserrat',Arial,Helvetica,sans-serif; font-weight:700; color:#2D2D2D;">John Bennett</p>
+              <p style="margin:0; font-size:14px; color:#7A7A7A;">Founder, Inspiring Connections</p>
+            </td>
+          </tr>
+
+          <!-- ───── FOOTER ───── -->
+          <tr>
+            <td class="ic-px" style="padding:28px 8px 8px 8px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td style="border-top:1px solid #E6E2D8; height:1px; font-size:0; line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="ic-px" style="padding:8px 8px 0 8px; font-family:'Open Sans',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.6; color:#9A9A9A;">
+              <p style="margin:0 0 6px 0;">
+                <strong style="color:#5A5A5A;">Inspiring Connections</strong> — relationship intelligence, built on trust.<br>
+                Purposeful connection unlocks potential.
+              </p>
+              <p style="margin:0 0 6px 0;">
+                <a href="https://inspiringconnections.io" target="_blank" style="color:#156E6B; text-decoration:none;">inspiringconnections.io</a>
+                &nbsp;·&nbsp;
+                <a href="mailto:john@inspiringconnections.io" style="color:#156E6B; text-decoration:none;">john@inspiringconnections.io</a>
+              </p>
+              <p style="margin:0 0 6px 0; color:#B5B5B5;">
+                {{company_address}}
+              </p>
+              <p style="margin:0;">
+                You're receiving this because you signed up at Inspiring Connections.
+                <a href="{{unsubscribe_url}}" target="_blank" style="color:#9A9A9A; text-decoration:underline;">Unsubscribe</a>
+                &nbsp;·&nbsp;
+                <a href="{{preferences_url}}" target="_blank" style="color:#9A9A9A; text-decoration:underline;">Email preferences</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /600px container -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

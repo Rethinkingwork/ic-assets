@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 260" role="img" aria-label="Rethinking Work">
+  <!-- Rethinking Work email lockup: the RW mark (teal rounded square, white R,
+       orange dot — from the live favicon) + "Rethinking Work" wordmark.
+       Rasterised to PNG, so fonts need not be installed by the mail client. -->
+  <!-- Mark (favicon 0..32 → scaled to 200px, padded) -->
+  <g transform="translate(20,30) scale(6.25)">
+    <rect width="32" height="32" rx="7" fill="#1B9894"/>
+    <text x="16" y="22" font-family="Montserrat, 'Trebuchet MS', Arial, sans-serif" font-size="18" font-weight="800" text-anchor="middle" fill="#fff">R</text>
+    <circle cx="24.5" cy="8.5" r="3" fill="#E1702F"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="250" y="120" font-family="Montserrat, 'Trebuchet MS', Arial, sans-serif" font-weight="800" font-size="74" letter-spacing="-1.5" fill="#2D2D2D">Rethinking</text>
+  <text x="250" y="204" font-family="Montserrat, 'Trebuchet MS', Arial, sans-serif" font-weight="800" font-size="74" letter-spacing="-1.5" fill="#1B9894">Work</text>
+</svg>
