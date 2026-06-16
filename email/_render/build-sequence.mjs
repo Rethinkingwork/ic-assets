@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const OUT = resolve(dirname(fileURLToPath(import.meta.url)), '../onboarding-sequence');
 
 // ── Brand constants (mirror sites/shared/brand.css + cis-portals/lib/brand.js) ──
-const LOGO = 'https://inspiringconnections.io/logo-email-horizontal.png';
+const LOGO = 'https://kntrbfrhajtvbuupyntu.supabase.co/storage/v1/object/public/brand-assets/ic-logo-email-horizontal.png';
 const SITE = 'https://inspiringconnections.io';
 const SCORECARD = 'https://cis-portals.vercel.app/scorecard';
 const GETSTARTED = 'https://cis-portals.vercel.app/start';

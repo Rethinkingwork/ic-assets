@@ -30,7 +30,7 @@ email/
 │   ├── 03-quick-win-scorecard.html send: ~day 3
 │   ├── 04-tips-use-case.html      send: ~day 7
 │   └── 05-check-in.html           send: ~day 14
-├── assets/                        logo PNGs (masters) + source SVGs
+├── assets/                        logo PNGs (masters, uploaded to Supabase brand-assets) + source SVGs
 └── _render/                       internal QA tooling (NOT shipped to recipients)
 ```
 
@@ -47,25 +47,26 @@ Google Drive link (`drive.google.com/...` needs auth), a `file://`/local path, o
 a pasted/attached image whose `cid:` reference is dropped on reply. Mail clients
 only reliably render images from a **stable, public HTTPS URL**.
 
-**The fix.** We render the IC butterfly mark and the RW wordmark to PNG and serve
-them from the live brand sites, so the URL is public and permanent:
+**The fix.** We render the IC butterfly mark and the RW wordmark to PNG and host
+them on **Supabase Storage** (public `brand-assets` bucket, project
+`kntrbfrhajtvbuupyntu`), so the URL is public, permanent, and live *now* — no
+site deploy required:
 
 | Brand | Public URL | Used by |
 | --- | --- | --- |
-| Inspiring Connections (mark) | `https://inspiringconnections.io/logo-email.png` | IC signature |
-| Inspiring Connections (lockup) | `https://inspiringconnections.io/logo-email-horizontal.png` | all IC emails |
-| Rethinking Work (lockup) | `https://rethinkingwork.life/logo-email.png` | RW signature |
+| Inspiring Connections (mark) | `https://kntrbfrhajtvbuupyntu.supabase.co/storage/v1/object/public/brand-assets/ic-logo-email.png` | IC signature |
+| Inspiring Connections (lockup) | `https://kntrbfrhajtvbuupyntu.supabase.co/storage/v1/object/public/brand-assets/ic-logo-email-horizontal.png` | all IC emails |
+| Rethinking Work (lockup) | `https://kntrbfrhajtvbuupyntu.supabase.co/storage/v1/object/public/brand-assets/rw-logo-email-horizontal.png` | RW signature |
 
-The PNGs are committed both as masters in `assets/` **and** into the site folders
-(`../sites/inspiringconnections.io/`, `../sites/rethinkingwork.life/`) so they
-deploy with the sites. Every signature/email `<img>` sets an explicit `width` (so
-it's crisp, not full-size) and an `alt` (so it degrades gracefully).
+The PNG masters live in `assets/` and are uploaded to the Supabase `brand-assets`
+bucket (the source of the public URLs above). Every signature/email `<img>` sets
+an explicit `width` (so it's crisp, not full-size) and an `alt` (so it degrades
+gracefully).
 
-> ⚠️ **These URLs go live only when this branch is deployed.** `inspiringconnections.io`
-> is already live (its `og.png` returns 200), so the moment these files ship to
-> the site root the logos resolve. Until then the `alt` text shows instead — which
-> is exactly the "broken box" being fixed, just with a tidy fallback. **Verify each
-> URL returns 200 after deploy.**
+> ✅ **These URLs are live now.** The `brand-assets` bucket is public and each URL
+> returns HTTP 200 with `content-type: image/png` — no deploy gate. To re-verify:
+> `curl -I <url>` should show `HTTP/2 200`. If a logo changes, re-upload the PNG to
+> the bucket via the Storage REST API (service-role key) and the URL updates in place.
 
 To paste the signatures into Gmail, see `signatures/PASTE-INTO-GMAIL.md`. (Gmail
 signatures can't be set programmatically — the operator pastes them once.)
@@ -216,7 +217,7 @@ App Password and click "go".
 - [ ] Gmail send helper routed through the LLM-neutral / no-vendor-lock seam style
 - [ ] Supabase cron schedule (~15 min)
 - [ ] templates moved/loaded by the function (inline or fetched from a store)
-- [ ] deploy logo PNGs (this branch) and verify all logo URLs return 200
+- [x] host logo PNGs on Supabase Storage (`brand-assets` bucket) — all logo URLs return 200
 - [ ] dry-run to John's own inbox first; only then enable for real signups
 
 ---

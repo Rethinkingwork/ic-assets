@@ -17,15 +17,15 @@ There are two files:
 The previous signature pointed its logo at an image Gmail couldn't fetch — almost
 always a Google Drive link or a pasted/attached image. Recipients' mail clients
 only render images from a **public HTTPS URL**. These new signatures use a public
-logo served from the live site, so the logo renders for everyone:
+logo served from **Supabase Storage** (the `brand-assets` bucket, already live),
+so the logo renders for everyone:
 
-- IC → `https://inspiringconnections.io/logo-email.png`
-- RW → `https://rethinkingwork.life/logo-email.png`
+- IC → `https://kntrbfrhajtvbuupyntu.supabase.co/storage/v1/object/public/brand-assets/ic-logo-email.png`
+- RW → `https://kntrbfrhajtvbuupyntu.supabase.co/storage/v1/object/public/brand-assets/rw-logo-email-horizontal.png`
 
-> **One-time prerequisite:** these logo files ship with this update and go live
-> when the brand sites next deploy. After deploy, open each URL in a browser —
-> you should see the logo. If you do, the signature will too. (Until then the
-> signature shows the brand name as text where the logo will appear.)
+> **No prerequisite:** these logos are already hosted on Supabase Storage and
+> return HTTP 200 right now — no site deploy needed. Open either URL in a browser
+> and you'll see the logo; the signature will render the same for every recipient.
 
 ---
 
@@ -59,8 +59,9 @@ settings).
 
 ## If a logo ever stops rendering
 
-1. Open the logo URL above directly in a browser. If it 404s, the site needs
-   (re)deploying with the `logo-email*.png` files in its folder.
+1. Open the logo URL above directly in a browser. If it 404s, the file is missing
+   from the Supabase `brand-assets` bucket — re-upload it (and confirm the bucket
+   is still public).
 2. Check the `<img src="…">` in the signature is the full `https://…` URL (not a
    Drive link, not a local path).
 3. Some clients block images until the reader clicks "show images" — that's a
