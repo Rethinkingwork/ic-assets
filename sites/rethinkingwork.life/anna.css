@@ -78,7 +78,11 @@
   .anna-root{right:12px;bottom:max(12px,env(safe-area-inset-bottom))}
   .anna-panel{width:calc(100vw - 24px);height:calc(100dvh - 24px);max-height:calc(100dvh - 24px)}
   .anna-note{padding-bottom:max(9px,env(safe-area-inset-bottom))}
+  .anna-root.open::before{content:"";position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(16,40,40,.55);margin:0 -12px calc(-1 * max(12px,env(safe-area-inset-bottom))) 0;z-index:-1;animation:anna-fade .22s ease}
+  .anna-cta a,.anna-cta button{min-height:44px;display:inline-flex;align-items:center;padding-top:0;padding-bottom:0}
+  .anna-close{margin-right:4px;padding:6px 8px}
 }
+@keyframes anna-fade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){
   .anna-root.open .anna-panel,.anna-launch{animation:none;transition:none}
   .anna-dot,.anna-typing span{animation:none}
