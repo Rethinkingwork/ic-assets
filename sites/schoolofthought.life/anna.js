@@ -18,9 +18,9 @@
     site: "inspiringconnections",
     launcherLabel: "Chat to ANNA",
     title: "ANNA",
-    subtitle: "the human half of Inspiring Connections",
+    subtitle: "the human side of Inspiring Connections",
     opener:
-      "Hello — I'm ANNA, the human half of Inspiring Connections. ERIC does the " +
+      "Hello — I'm ANNA, the human side of Inspiring Connections. ERIC does the " +
       "clever number-crunching; I keep it human. Most connections happen by " +
       "accident — the good ones happen on purpose. No pitch, I'm just curious: " +
       "what's brought you our way today?",
