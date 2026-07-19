@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="design_doc_mode" content="canvas" />
+<title>Instagram + X Kit — Rethinking Work × Inspiring Connections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+ --teal:#1B9894;--teal-deep:#156E6B;--teal-light:#2BBDB6;--orange:#E1702F;--orange-deep:#B85820;
+ --cream:#F8F7F4;--surface:#FDFCF8;--card:#FFFFFE;--border:#E6E2D8;--border-strong:#D4CFC0;
+ --charcoal:#2D2D2D;--mute:#5A5A5A;--dim:#7A7A7A;
+ --font-head:'Montserrat',system-ui,sans-serif;--font-body:'Open Sans',system-ui,sans-serif;
+ --grad-band:linear-gradient(120deg,#0E4B49 0%,#156E6B 48%,#1B9894 100%);
+ --grad-deep:linear-gradient(150deg,#0C3F3D 0%,#114F4D 55%,#156E6B 100%);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:var(--font-body);color:var(--charcoal)}
+h1,h2,h3,p{margin:0}
+.frame{position:absolute;overflow:hidden;box-shadow:0 20px 60px rgba(12,45,44,.28);border-radius:2px}
+.flabel{position:absolute;font-family:var(--font-head);font-weight:600;font-size:15px;color:#2D2D2D;background:#fff;border:1px solid var(--border);padding:7px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.flabel .dim{color:var(--dim);font-weight:500}
+.sect{position:absolute;font-family:var(--font-head);font-weight:800;font-size:34px;letter-spacing:-.6px;color:#2D2D2D}
+.sect small{display:block;font-family:var(--font-body);font-weight:400;font-size:16px;letter-spacing:0;color:#5A5A5A;margin-top:6px;max-width:680px;line-height:1.5}
+.eyebrow{font-family:var(--font-head);font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--orange)}
+.on-dark .eyebrow{color:#E8943A}
+.rule{height:3px;background:var(--orange);border-radius:2px}
+.hstroke{font-family:var(--font-head);font-weight:800;letter-spacing:-1px;line-height:1.02}
+.watermark{position:absolute;opacity:.06;pointer-events:none}
+.on-dark{color:#fff}.on-cream{color:var(--charcoal)}
+.pill{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;background:var(--orange);color:#fff;border-radius:40px;padding:16px 30px;font-size:20px}
+.handle{font-family:var(--font-head);font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+#ui{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:9999;display:flex;align-items:center;gap:8px;background:rgba(18,40,39,.92);backdrop-filter:blur(10px);border-radius:14px;padding:10px 12px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+#ui .lab{color:#cfe6e4;font-family:var(--font-head);font-weight:600;font-size:12px;margin-right:4px}
+#ui button{font-family:var(--font-head);font-weight:700;font-size:12.5px;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:9px;cursor:pointer;transition:.15s}
+#ui button:hover{border-color:#fff}#ui button.on{background:var(--orange);border-color:var(--orange)}
+#ui .note{color:#8fb4b1;font-size:11px;margin-left:6px}
+</style>
+</head>
+<body>
+
+<!-- ===== INSTAGRAM ===== -->
+<div class="sect" style="left:100px;top:70px">Instagram<small>Square 1080×1080 for the grid, plus a 1080×1920 story. Same system, cropped to Instagram’s ratios.</small></div>
+
+<div class="flabel" style="left:100px;top:200px">Post · quote <span class="dim">· 1080 × 1080</span></div>
+<div class="frame on-cream" style="left:100px;top:232px;width:1080px;height:1080px;background:var(--cream)">
+ <img class="mark watermark" src="mark.png" style="width:640px;right:-200px;bottom:-200px;opacity:.05" alt="">
+ <img class="mark" src="mark.png" style="width:104px;position:absolute;top:76px;left:80px" alt="">
+ <div style="position:absolute;left:80px;right:80px;top:50%;transform:translateY(-50%)">
+ <div class="hstroke" style="font-size:70px;line-height:1.06;color:#2D2D2D">Purposeful connection unlocks <span style="color:var(--orange)">potential.</span></div>
+ <div class="rule" style="width:60px;margin:36px 0 20px"></div>
+ <div class="handle" style="font-size:20px;color:var(--teal-deep)"><span data-b="handle">@rethinkingwork</span></div>
+ </div>
+</div>
+
+<div class="flabel" style="left:1280px;top:200px">Post · idea <span class="dim">· 1080 × 1080</span></div>
+<div class="frame on-dark" style="left:1280px;top:232px;width:1080px;height:1080px;background:var(--grad-deep)">
+ <img class="mark watermark" src="mark.png" style="width:700px;left:-220px;top:-200px;opacity:.09" alt="">
+ <img class="mark" src="mark.png" style="width:112px;position:absolute;top:76px;right:80px" alt="">
+ <div style="position:absolute;left:80px;right:80px;top:50%;transform:translateY(-50%)">
+ <div class="eyebrow" style="font-size:19px">The philosophy</div>
+ <div class="hstroke" style="font-size:76px;line-height:1.05;margin-top:20px">The tools tell you <span style="color:#E8943A">what.</span> We tell you <span style="color:var(--orange)">why.</span></div>
+ </div>
+ <div style="position:absolute;left:80px;bottom:74px" class="handle"><span style="font-size:18px;color:rgba(255,255,255,.8)" data-b="handle">@rethinkingwork</span></div>
+</div>
+
+<div class="flabel" style="left:2460px;top:200px">Story <span class="dim">· 1080 × 1920</span></div>
+<div class="frame on-dark" style="left:2460px;top:232px;width:1080px;height:1920px;background:var(--grad-band)">
+ <img class="mark watermark" src="mark.png" style="width:900px;left:-280px;bottom:-320px;opacity:.1" alt="">
+ <img class="mark" src="mark.png" style="width:180px;position:absolute;top:150px;left:50%;transform:translateX(-50%)" alt="">
+ <div style="position:absolute;left:80px;right:80px;top:50%;transform:translateY(-50%);text-align:center">
+ <div class="eyebrow" style="font-size:22px" data-b="name">Rethinking Work</div>
+ <div class="hstroke" style="font-size:100px;line-height:1.02;margin-top:26px">Teams outperform companies.</div>
+ <p style="font-size:32px;line-height:1.5;color:rgba(255,255,255,.88);margin-top:36px">Always have. Always will.</p>
+ </div>
+ <div style="position:absolute;left:0;right:0;bottom:150px;text-align:center"><span class="pill">Swipe up →</span></div>
+</div>
+
+<!-- ===== X / TWITTER ===== -->
+<div class="sect" style="left:100px;top:2280px">X (Twitter)<small>Header 1500×500 and a 1600×900 post card. The mark sits right of centre so the profile photo doesn’t cover it.</small></div>
+
+<div class="flabel" style="left:100px;top:2410px">Header <span class="dim">· 1500 × 500</span></div>
+<div class="frame on-dark" style="left:100px;top:2442px;width:1500px;height:500px;background:var(--grad-deep)">
+ <img class="mark watermark" src="mark.png" style="width:560px;right:-120px;top:-120px;opacity:.1" alt="">
+ <img class="mark" src="mark.png" style="width:230px;position:absolute;right:80px;top:50%;transform:translateY(-50%)" alt="">
+ <div style="position:absolute;left:520px;top:50%;transform:translateY(-50%);max-width:620px">
+ <div class="eyebrow" style="font-size:16px" data-b="name">Rethinking Work</div>
+ <div class="hstroke" style="font-size:52px;line-height:1.08;margin-top:14px">Purposeful connection unlocks <span style="color:var(--orange)">potential.</span></div>
+ <div class="handle" style="font-size:18px;color:rgba(255,255,255,.8);margin-top:20px" data-b="domain">rethinkingwork.life</div>
+ </div>
+</div>
+
+<div class="flabel" style="left:1660px;top:2410px">Post card <span class="dim">· 1600 × 900</span></div>
+<div class="frame on-cream" style="left:1660px;top:2442px;width:1600px;height:900px;background:var(--cream)">
+ <img class="mark watermark" src="mark.png" style="width:640px;right:-200px;bottom:-220px;opacity:.05" alt="">
+ <img class="mark" src="mark.png" style="width:96px;position:absolute;top:70px;left:80px" alt="">
+ <div style="position:absolute;left:80px;right:80px;top:50%;transform:translateY(-50%)">
+ <div class="eyebrow" style="font-size:18px">The method</div>
+ <div class="hstroke" style="font-size:82px;line-height:1;margin-top:18px;color:#2D2D2D">Recruit · Retain · Realise</div>
+ <p style="font-size:28px;line-height:1.5;color:var(--mute);margin-top:26px;max-width:1100px">Bring in people who fit the why. Keep them by caring. Unlock the potential already there.</p>
+ </div>
+ <div style="position:absolute;left:80px;bottom:64px" class="handle"><span style="font-size:18px;color:var(--teal-deep)" data-b="handle">@rethinkingwork</span></div>
+</div>
+
+<!-- ===== OG / WEBSITE SHARE ===== -->
+<div class="sect" style="left:100px;top:3480px">Website / Open Graph<small>Generic 1200×630 share card for links to any of the sites — the default preview across Slack, WhatsApp, LinkedIn and X.</small></div>
+
+<div class="flabel" style="left:100px;top:3610px">OG share <span class="dim">· 1200 × 630</span></div>
+<div class="frame on-dark" style="left:100px;top:3642px;width:1200px;height:630px;background:var(--grad-band)">
+ <img class="mark" src="mark.png" style="width:300px;position:absolute;right:60px;top:50%;transform:translateY(-50%)" alt="">
+ <div style="position:absolute;left:72px;top:50%;transform:translateY(-50%);max-width:640px">
+ <div class="eyebrow" style="font-size:17px" data-b="name">Rethinking Work</div>
+ <div class="hstroke" style="font-size:56px;line-height:1.08;margin-top:16px">Purposeful connection unlocks <span style="color:var(--orange)">potential.</span></div>
+ <div class="handle" style="font-size:19px;color:rgba(255,255,255,.82);margin-top:24px" data-b="domain">rethinkingwork.life</div>
+ </div>
+</div>
+
+<div class="flabel" style="left:1360px;top:3610px">OG share · light <span class="dim">· 1200 × 630</span></div>
+<div class="frame on-cream" style="left:1360px;top:3642px;width:1200px;height:630px;background:var(--cream)">
+ <img class="mark" src="mark.png" style="width:300px;position:absolute;right:60px;top:50%;transform:translateY(-50%)" alt="">
+ <div style="position:absolute;left:72px;top:50%;transform:translateY(-50%);max-width:640px">
+ <div class="eyebrow" style="font-size:17px" data-b="name">Rethinking Work</div>
+ <div class="hstroke" style="font-size:56px;line-height:1.08;margin-top:16px;color:#2D2D2D">Purposeful connection unlocks <span style="color:var(--orange)">potential.</span></div>
+ <div class="handle" style="font-size:19px;color:var(--teal-deep);margin-top:24px" data-b="domain">rethinkingwork.life</div>
+ </div>
+</div>
+
+<div id="ui">
+ <span class="lab">Brand</span>
+ <button data-set="rtw" class="on">Rethinking Work</button>
+ <button data-set="ic">Inspiring Connections</button>
+ <button data-set="sr">smartreach</button>
+ <button data-set="sot">School of Thought</button>
+ <span class="note">UI only — not part of exports</span>
+</div>
+
+<script>
+const BRANDS={
+ rtw:{name:'Rethinking Work',domain:'rethinkingwork.life',handle:'@rethinkingwork'},
+ ic:{name:'Inspiring Connections',domain:'inspiringconnections.io',handle:'@inspiringconnections'},
+ sr:{name:'smartreach',domain:'rethinkingwork.co.uk',handle:'@smartreach'},
+ sot:{name:'School of Thought',domain:'schoolofthought.life',handle:'@schoolofthought'}
+};
+function setBrand(k){const b=BRANDS[k];if(!b)return;
+ document.querySelectorAll('[data-b]').forEach(el=>{const key=el.getAttribute('data-b');if(b[key]!=null)el.textContent=b[key];});
+ document.querySelectorAll('#ui button').forEach(x=>x.classList.toggle('on',x.getAttribute('data-set')===k));}
+document.querySelectorAll('#ui button').forEach(x=>x.onclick=()=>setBrand(x.getAttribute('data-set')));
+setBrand('rtw');
+</script>
+<script>(function(){var S=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Inspiring Connections — two faces forming a butterfly in a safe circle (vector master)">
+<circle cx="256" cy="256" r="247" fill="none" stroke="#1B9894" stroke-width="15"></circle>
+<path fill="#1B9894" d="M175.0 103.0C176.0 102.8 176.7 101.5 180.0 103.0C183.3 104.5 188.7 106.5 195.0 112.0C201.3 117.5 211.2 127.3 218.0 136.0C224.8 144.7 232.3 157.3 236.0 164.0C239.7 170.7 239.2 171.3 240.0 176.0C240.8 180.7 242.5 184.0 241.0 192.0C239.5 200.0 232.7 216.3 231.0 224.0C229.3 231.7 230.2 232.5 231.0 238.0C231.8 243.5 235.5 252.3 236.0 257.0C236.5 261.7 235.3 263.8 234.0 266.0C232.7 268.2 230.7 269.5 228.0 270.0C225.3 270.5 221.3 266.7 218.0 269.0C214.7 271.3 211.7 282.2 208.0 284.0C204.3 285.8 198.2 280.3 196.0 280.0C193.8 279.7 194.3 280.2 195.0 282.0C195.7 283.8 199.3 288.5 200.0 291.0C200.7 293.5 201.0 295.2 199.0 297.0C197.0 298.8 191.5 299.0 188.0 302.0C184.5 305.0 182.0 313.3 178.0 315.0C174.0 316.7 171.5 315.2 164.0 312.0C156.5 308.8 140.2 298.5 133.0 296.0C125.8 293.5 125.8 295.5 121.0 297.0C116.2 298.5 107.7 303.7 104.0 305.0C100.3 306.3 100.2 305.5 99.0 305.0C97.8 304.5 97.2 303.3 97.0 302.0C96.8 300.7 95.3 298.5 98.0 297.0C100.7 295.5 109.2 294.8 113.0 293.0C116.8 291.2 115.7 295.8 121.0 286.0C126.3 276.2 139.8 243.5 145.0 234.0C150.2 224.5 148.5 230.3 152.0 229.0C155.5 227.7 165.2 229.7 166.0 226.0C166.8 222.3 158.5 213.0 157.0 207.0C155.5 201.0 154.8 199.7 157.0 190.0C159.2 180.3 167.7 162.5 170.0 149.0C172.3 135.5 170.3 116.5 171.0 109.0C171.7 101.5 173.3 105.0 174.0 104.0C174.7 103.0 174.0 103.2 175.0 103.0Z"></path>
+<path fill="#E1702F" d="M335.0 218.0C339.3 217.8 351.0 217.2 360.0 218.0C369.0 218.8 381.0 221.0 389.0 223.0C397.0 225.0 403.3 227.7 408.0 230.0C412.7 232.3 415.5 235.2 417.0 237.0C418.5 238.8 422.3 236.7 417.0 241.0C411.7 245.3 396.8 252.5 385.0 263.0C373.2 273.5 354.3 296.3 346.0 304.0C337.7 311.7 339.7 307.8 335.0 309.0C330.3 310.2 320.2 308.8 318.0 311.0C315.8 313.2 321.5 318.2 322.0 322.0C322.5 325.8 326.5 324.0 321.0 334.0C315.5 344.0 294.5 372.7 289.0 382.0C283.5 391.3 287.3 386.3 288.0 390.0C288.7 393.7 292.3 401.2 293.0 404.0C293.7 406.8 292.7 406.2 292.0 407.0C291.3 407.8 290.3 409.0 289.0 409.0C287.7 409.0 285.2 410.0 284.0 407.0C282.8 404.0 283.2 395.8 282.0 391.0C280.8 386.2 279.8 381.8 277.0 378.0C274.2 374.2 271.2 372.0 265.0 368.0C258.8 364.0 244.8 357.2 240.0 354.0C235.2 350.8 236.7 350.7 236.0 349.0C235.3 347.3 235.2 346.3 236.0 344.0C236.8 341.7 240.2 339.3 241.0 335.0C241.8 330.7 238.5 321.5 241.0 318.0C243.5 314.5 255.2 316.2 256.0 314.0C256.8 311.8 247.5 307.5 246.0 305.0C244.5 302.5 245.7 301.3 247.0 299.0C248.3 296.7 254.0 294.2 254.0 291.0C254.0 287.8 248.2 282.7 247.0 280.0C245.8 277.3 246.2 276.8 247.0 275.0C247.8 273.2 246.2 272.2 252.0 269.0C257.8 265.8 274.7 261.0 282.0 256.0C289.3 251.0 291.2 244.0 296.0 239.0C300.8 234.0 306.2 229.2 311.0 226.0C315.8 222.8 321.2 221.2 325.0 220.0C328.8 218.8 332.3 219.3 334.0 219.0C335.7 218.7 330.7 218.2 335.0 218.0Z"></path>
+</svg>`;var M='data:image/svg+xml;utf8,'+encodeURIComponent(S);document.querySelectorAll('img').forEach(function(i){if(/mark\.png$/.test(i.getAttribute('src')||''))i.src=M;});})();</script>
+</body>
+</html>
