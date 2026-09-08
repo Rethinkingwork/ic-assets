@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Workspace switcher (alternative A)">
+  <title>Workspace switcher (alternative A)</title>
+  <circle cx="12" cy="12" r="9.3" fill="none" stroke="#1B9894" stroke-width="1.2" opacity=".5"/><g fill="none" stroke="#1B9894" stroke-width="1.7" transform="translate(3.6 3.6) scale(.7)"><path d="M12 12A6 6 0 0 1 4 5 6 6 0 0 1 12 12Z"/></g><g fill="none" stroke="#156E6B" stroke-width="1.7" transform="rotate(180 12 12) translate(3.6 3.6) scale(.7)"><path d="M12 12A6 6 0 0 1 4 5 6 6 0 0 1 12 12Z"/></g>
+</svg>

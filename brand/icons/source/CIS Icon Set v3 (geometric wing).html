@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CIS / Scout — icon family, round four</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#1B9894;--deep:#156E6B;--orange:#E1702F;--cream:#F8F7F4;--ink:#152420;--line:#E2DED3;--mute:#5F6B66;--fh:'Montserrat',system-ui,sans-serif;--fb:'Open Sans',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--fb);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:56px 28px 100px}
+h1,h2,h3,p{margin:0}
+a{color:var(--teal)}a:hover{color:var(--orange)}
+.eyebrow{font-family:var(--fh);font-weight:700;text-transform:uppercase;letter-spacing:2.4px;font-size:11px;color:var(--orange)}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-1px;line-height:1.05;margin-top:10px}
+.lede{font-size:15.5px;color:var(--mute);max-width:68ch;margin-top:14px;text-wrap:pretty}
+h2{font-family:var(--fh);font-weight:800;font-size:20px;letter-spacing:-.3px;margin-top:60px}
+h2 .n{color:var(--mute);margin-right:10px;font-weight:700}
+.sub{font-size:13.5px;color:var(--mute);margin-top:5px;max-width:74ch;text-wrap:pretty}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;background:#fff;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:26px}
+.rule{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 20px}
+.rule .cap{font-family:var(--fh);font-weight:700;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange)}
+.rule p{font-size:12.6px;color:var(--mute);margin-top:7px;text-wrap:pretty}
+.fam{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:30px}
+.cell{background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 22px 20px;display:flex;flex-direction:column}
+.pair{display:flex;gap:0;border:1px solid #F1EEE6}
+.half{flex:1 1 0;padding:16px 8px 11px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.half+.half{border-left:1px solid #F1EEE6;background:#FCFBF9}
+.gl{display:flex;align-items:center;gap:14px;min-height:26px}
+.gl svg{display:block;flex:none}
+.half .cap{font-family:var(--fh);font-weight:700;font-size:8.5px;letter-spacing:1.3px;text-transform:uppercase;color:#9AA39F}
+.nm{font-family:var(--fh);font-weight:800;font-size:14px;letter-spacing:-.2px;margin-top:14px;display:flex;align-items:baseline;gap:8px}
+.alt{font-family:var(--fh);font-weight:700;font-size:8.5px;letter-spacing:1.2px;border:1px solid var(--line);padding:2px 5px;color:var(--mute);flex:none}
+.role{font-size:9.5px;font-family:var(--fh);font-weight:700;letter-spacing:1.3px;text-transform:uppercase;margin-top:5px}
+.why{font-size:12.4px;color:var(--mute);margin-top:8px;text-wrap:pretty}
+.sil{background:#fff;border:1px solid var(--line);margin-top:28px;padding:26px 24px}
+.silrow{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.silrow.tight{gap:20px;margin-top:22px;padding-top:22px;border-top:1px solid #F1EEE6}
+.silrow svg{display:block}
+.tabs{display:flex;gap:0;background:#fff;border:1px solid var(--line);margin-top:26px;overflow:hidden}
+.tab{flex:1 1 0;padding:13px 8px 11px;display:flex;flex-direction:column;align-items:center;gap:7px;border-right:1px solid #F1EEE6;font-family:var(--fh);font-weight:700;font-size:9.5px;letter-spacing:.6px;color:var(--mute)}
+.tab:last-child{border-right:0}
+.tab.on{color:var(--ink);background:#F2F8F7;box-shadow:inset 0 -2px 0 var(--deep)}
+.audit{margin-top:26px;border-top:1px solid var(--line)}
+.au{display:flex;gap:20px;align-items:flex-start;padding:18px 2px;border-bottom:1px solid var(--line)}
+.au .gs{display:flex;gap:12px;align-items:center;flex:none;padding-top:2px}
+.au .gs svg{display:block}
+.au .tx{flex:1 1 auto}
+.au .tt{font-family:var(--fh);font-weight:700;font-size:12.5px}
+.au .tb{font-size:12.6px;color:var(--mute);margin-top:5px;text-wrap:pretty}
+.flag{background:#FFF7F1;border:1px solid #F2D6C2;padding:16px 18px;margin-top:26px;font-size:13px;max-width:80ch;text-wrap:pretty}
+.flag b.h{font-family:var(--fh);font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:5px}
+footer{margin-top:76px;border-top:1px solid var(--line);padding-top:20px;font-size:12.5px;color:var(--mute);max-width:78ch;text-wrap:pretty}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#F8F7F4"/><g fill="none" stroke="#1B9894" stroke-width="8" stroke-linecap="round"><path d="M36 42h48M36 60h48M36 78h22"/></g><rect x="68" y="70" width="18" height="18" rx="5" fill="#E1702F"/></svg></template>
+<div class="wrap">
+<div class="eyebrow">CIS / Scout — round four</div>
+<h1>Ten glyphs, conventional first</h1>
+<p class="lede">Geometric bones, optically softened terminals and apertures, and the wing used as a module only where it earns its place. The 180° rotation stays the construction grammar for genuine counterparts — Log sent / Log reply, and Chat — and is not forced on symbols that already have a settled meaning.</p>
+
+<h2><span class="n">01</span>The rules this round runs on</h2>
+<p class="sub">Your ruling, restated as production constraints so the drawings can be checked against them.</p>
+<div class="rules">
+  <div class="rule"><div class="cap">Read</div><p>Open or receptive geometry, predominantly outline, movement inward. No solid marker anywhere in the glyph.</p></div>
+  <div class="rule"><div class="cap">Write / spend</div><p>A closed destination or committed terminal plus one solid orange consequence marker. Survives monochrome as the only filled mass in the glyph.</p></div>
+  <div class="rule"><div class="cap">The ring</div><p>Only where a context is genuinely held, bounded or switched. It appears once in this round, in Workspace switcher A.</p></div>
+  <div class="rule"><div class="cap">Selected tab</div><p>Ground tint plus a deep-teal underline, carried by the container. Never orange, so it cannot be read as a write action.</p></div>
+  <div class="rule"><div class="cap">One motif each</div><p>Each glyph carries a single metaphor. Where the wing appears it is a corner, a terminal or a speech form, not a second idea layered on the first.</p></div>
+  <div class="rule"><div class="cap">Credit balance</div><p>Drawn as status. Orange is held back for the warning state, shown at the end of section 02.</p></div>
+</div>
+
+<h2><span class="n">02</span>The family</h2>
+<p class="sub">Each glyph at 24px and at actual 16px, colour beside monochrome. Alternatives are offered only for Draft, Credit balance and Workspace switcher.</p>
+<div class="fam" id="fam"></div>
+
+<h2><span class="n">03</span>Silhouettes without labels</h2>
+<p class="sub">The same set at 16px with nothing to help it. Top row is the ten resolved glyphs in order; bottom row is the four already-drawn actions they sit beside in the panel, for silhouette spacing. Those four are unrevised round-three drawings, and checking them here surfaced a real fault: in the round-three file the wing in Log sent and Log reply was scaled and translated outside the 24px box, so only its tail was rendering. It is corrected in this row, and those two need redrawing properly alongside whichever alternatives you pick.</p>
+<div class="sil">
+  <div class="silrow" id="sil"></div>
+  <div class="silrow tight" id="sil2"></div>
+</div>
+
+<h2><span class="n">04</span>Selected tab, without orange</h2>
+<p class="sub">Six tabs at panel scale. Selection is ground plus underline; the glyph itself does not change colour, so the write grammar stays unambiguous.</p>
+<div class="tabs" id="tabs"></div>
+
+<h2><span class="n">05</span>Collision audit at 16px</h2>
+<p class="sub">Pairs that could be confused in monochrome at 16px, and the silhouette difference that separates them. Shown as the eye actually meets them: small, mono, adjacent.</p>
+<div class="audit" id="audit"></div>
+
+<div class="flag"><b class="h">Two things I did not resolve for you</b><b>Credit balance</b> is drawn as an icon here, but it works better as a component: meter plus numeral, where the numeral is the primary element and the meter is 14–16px beside it. Both alternatives are shown in that context at the end of the family. <b>Workspace switcher B</b> spends its whole silhouette on the rotation, which means it no longer contains a wing at all. A is the branded reading, B is the legible one. If B is chosen, the mark still appears in the panel header lockup, so the set does not lose its origin.</div>
+
+<footer>Rounds preserved: <b>CIS Icon Directions v2 (wing-lobe).html</b>, <b>CIS Icon Directions v1 (reference).html</b>, <b>CIS Panel Icon Set v1 (reference).html</b>. Next step on approval: resolve the three alternatives, then export all sixteen as individual SVG masters for <b>ic-assets/brand/icons/</b> at 24px with a 1.7 stroke, plus a 16px optically corrected variant where the counters need it.</footer>
+</div>
+
+<script>
+const T='#1B9894',D='#156E6B',O='#E1702F',I='#152420';
+const W='M12 12A6 6 0 0 1 4 5 6 6 0 0 1 12 12Z';
+
+const GL=[
+{id:'copy',nm:'Copy outreach prompt',role:'read',
+ why:'Two offset prompt cards. The wing enters as the back card\u2019s top-right corner — two arcs meeting at a tip — so the brand sits in the fragment being copied, not in the metaphor.',
+ a:'<path d="M8.2 9.4V6.6a2 2 0 0 1 2-2h6.4A4 4 0 0 1 20.9 3.5 4 4 0 0 1 19.8 8.2V13.2a2 2 0 0 1-2 2h-2.2"/><path d="M6.8 15h5.6"/>',
+ s:'<path d="M5.6 9.4h8a2 2 0 0 1 2 2v6.8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-6.8a2 2 0 0 1 2-2z"/>'},
+
+{id:'queue',nm:'Add to action queue',role:'write',
+ why:'An ordered destination of three positions with the last one left open, and a solid module entering it from the right. Wide and striped, where Add to campaign rises diagonally.',
+ s:'<path d="M4.4 6.6h13.2M4.4 12h13.2M4.4 17.4h8.2"/>',
+ f:'<rect x="15" y="15.5" width="3.9" height="3.9" rx="1.15"/>'},
+
+{id:'call',nm:'Log a call outcome',role:'write',
+ why:'A conventional handset, untouched, plus one closed outcome node. The node is the only committed mass in the glyph, which is what makes it a log rather than a dial.',
+ s:'<g transform="translate(-0.6 2.4) scale(0.8)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g>',
+ f:'<circle cx="19" cy="5.2" r="2.6"/>'},
+
+{id:'dossier',nm:'Import LinkedIn dossier',role:'write',
+ why:'A bounded document receiving one contained bundle across a dashed boundary. Pull LinkedIn info stays a light extraction; this is a block of material crossing into the record.',
+ s:'<path d="M12.8 3.8h5.6a2 2 0 0 1 2 2v12.4a2 2 0 0 1-2 2h-5.6"/>',
+ a:'<path d="M14.4 7.4h4M14.4 16.6h4"/>',
+ d:'<path d="M12.8 3.8V20.2"/>',
+ f:'<rect x="8" y="9.6" width="6.6" height="4.8" rx="1.4"/>'},
+
+{id:'worklist',nm:'Worklist',role:'read',tab:'Worklist',
+ why:'A spine with three ordered veins reading top to bottom, all angled the same way so the structure stays a list rather than a plant. The single filled node marks the active position.',
+ s:'<path d="M6.8 3.8V20.2"/><path d="M6.8 8.6 18.4 6.6M6.8 13.2 18.4 11.2M6.8 17.8 18.4 15.8"/>',
+ f:'<circle cx="18.4" cy="6.6" r="2"/>'},
+
+{id:'draftA',nm:'Draft',role:'read',tab:'Draft',alt:'A',
+ why:'A page whose contour is deliberately unfinished at the bottom-right, with the second rule stopping short. Mid-change stated by the geometry, with no pencil to confuse with Edit.',
+ s:'<path d="M7.6 20.2H5.6a1.8 1.8 0 0 1-1.8-1.8V5.6a1.8 1.8 0 0 1 1.8-1.8h9.6a1.8 1.8 0 0 1 1.8 1.8v5.4"/>',
+ a:'<path d="M7.4 9h5.6M7.4 13h3"/>'},
+
+{id:'draftB',nm:'Draft',role:'read',alt:'B',
+ why:'The same idea on a message form rather than a page: the bubble\u2019s lower run and tail are left open. Reads more clearly as unsent outreach, less clearly as a document.',
+ s:'<path d="M8.6 19.4H6a2.2 2.2 0 0 1-2.2-2.2V7a2.2 2.2 0 0 1 2.2-2.2h12a2.2 2.2 0 0 1 2.2 2.2v5"/>',
+ a:'<path d="M7.6 9.6h8.8M7.6 13.4h4.2"/>'},
+
+{id:'chat',nm:'Chat',role:'read',tab:'Chat',
+ why:'Two speech forms related by 180° rotation, holding a diagonal band of negative space between two perspectives. The clearest expression of the construction rule in the set, and no ring, so it never becomes the logo.',
+ s:'<path d="M5.8 3.6h7a2.2 2.2 0 0 1 2.2 2.2v3.4a2.2 2.2 0 0 1-2.2 2.2H8.4l-3.6 2.3.6-2.5a2.2 2.2 0 0 1-1.8-2.15V5.8a2.2 2.2 0 0 1 2.2-2.2z"/>',
+ a:'<g transform="rotate(180 12 12)"><path d="M5.8 3.6h7a2.2 2.2 0 0 1 2.2 2.2v3.4a2.2 2.2 0 0 1-2.2 2.2H8.4l-3.6 2.3.6-2.5a2.2 2.2 0 0 1-1.8-2.15V5.8a2.2 2.2 0 0 1 2.2-2.2z"/></g>'},
+
+{id:'today',nm:'Today',role:'read',tab:'Today',
+ why:'A bounded day inside a conventional calendar. One emphatic present-day node, deep teal rather than orange, since arriving at today spends nothing.',
+ s:'<path d="M3.8 7.8a2 2 0 0 1 2-2h12.4a2 2 0 0 1 2 2v10.4a2 2 0 0 1-2 2H5.8a2 2 0 0 1-2-2z"/><path d="M3.8 10.8h16.4"/>',
+ f:'<rect x="10" y="13.2" width="4" height="4" rx="1.2"/>'},
+
+{id:'log',nm:'Log',role:'read',tab:'Log',
+ why:'A straight vertical path with three deposited nodes and rules that shorten as they recede. Settled past, where Worklist points at pending action.',
+ s:'<path d="M7.6 3.8V20.2"/><path d="M12.6 7h7.6M12.6 12h6.2M12.6 17h4.4"/>',
+ f:'<circle cx="7.6" cy="7" r="1.9"/><circle cx="7.6" cy="12" r="1.9"/><circle cx="7.6" cy="17" r="1.9"/>'},
+
+{id:'creditA',nm:'Credit balance',role:'status',alt:'A',
+ why:'A segmented meter: five finite positions, three remaining. Restrained enough to sit at 14px beside the numeral without competing with it.',
+ s:'<rect x="2.6" y="9.2" width="18.8" height="5.6" rx="2.8"/>',
+ seg:'<path d="M5.8 12h1.3M9.4 12h1.3M13 12h1.3"/>'},
+
+{id:'creditB',nm:'Credit balance',role:'status',alt:'B',
+ why:'Four compact units, three spent. Counts rather than measures, which suits a balance that moves in whole credits, and holds its shape better than a meter at 14px.',
+ s:'<rect x="3.8" y="3.8" width="7.4" height="7.4" rx="1.8"/><rect x="12.8" y="3.8" width="7.4" height="7.4" rx="1.8"/><rect x="3.8" y="12.8" width="7.4" height="7.4" rx="1.8"/><rect x="12.8" y="12.8" width="7.4" height="7.4" rx="1.8"/>',
+ fx:'<rect x="5.4" y="5.4" width="4.2" height="4.2" rx="1"/><rect x="14.4" y="5.4" width="4.2" height="4.2" rx="1"/><rect x="5.4" y="14.4" width="4.2" height="4.2" rx="1"/>'},
+
+{id:'wsA',nm:'Workspace switcher',role:'switch',alt:'A',
+ why:'The mark\u2019s own arrangement at icon scale: two wings in the held ring, rotationally paired. Teal and deep teal only — identity is carried by the geometry, and orange stays available for a warning.',
+ raw:(c,a)=>`<circle cx="12" cy="12" r="9.3" fill="none" stroke="${c}" stroke-width="1.2" opacity=".5"/><g fill="none" stroke="${c}" stroke-width="1.7" transform="translate(3.6 3.6) scale(.7)"><path d="${W}"/></g><g fill="none" stroke="${a}" stroke-width="1.7" transform="rotate(180 12 12) translate(3.6 3.6) scale(.7)"><path d="${W}"/></g>`},
+
+{id:'wsB',nm:'Workspace switcher',role:'switch',alt:'B',
+ why:'Two arcs related by 180° rotation, each with a committed terminal, turning around the held context in the centre. The switch is the rotation, so the whole context visibly changes rather than being colour-coded.',
+ s:'<path d="M15 3.7A8.8 8.8 0 0 1 15 20.3"/><path d="M15 20.3 14.2 16.9M15 20.3 11.5 21.1"/>',
+ a:'<path d="M9 20.3A8.8 8.8 0 0 1 9 3.7"/><path d="M9 3.7 9.8 7.1M9 3.7 12.5 2.9"/><rect x="9.9" y="9.9" width="4.2" height="4.2" rx="1.3"/>'}
+];
+
+const EXIST=[
+{id:'pull',nm:'Pull LinkedIn info',role:'read',s:`<g transform="translate(-1.6 2.2) scale(1.15)"><path d="${W}"/></g>`,a:'<path d="M16.4 8.8a5.2 5.2 0 0 1 0 6.4"/><path d="M19 6.6a8.6 8.6 0 0 1 0 10.8"/>'},
+{id:'campaign',nm:'Add to campaign',role:'write',s:`<g transform="translate(1.4 11) scale(.58)"><path d="${W}"/></g><g transform="translate(5 7.4) scale(.58)"><path d="${W}"/></g><g transform="translate(8.6 3.8) scale(.58)"><path d="${W}"/></g>`,f:'<circle cx="19" cy="17" r="2.4"/>'},
+{id:'sent',nm:'Log sent',role:'write',s:'<path d="M4.6 18.6h14.8"/>',a:`<g transform="translate(-1 -1.8) scale(1.3)"><path d="${W}"/></g>`},
+{id:'reply',nm:'Log reply',role:'write',s:'<g transform="rotate(180 12 12)"><path d="M4.6 18.6h14.8"/></g>',a:`<g transform="rotate(180 12 12) translate(-1 -1.8) scale(1.3)"><path d="${W}"/></g>`}
+];
+
+function draw(g,size,mono,warn){
+ const c=mono?I:T, a=mono?I:D;
+ let f=mono?I:(g.role==='write'?O:D);
+ if(warn) f=O;
+ let o='';
+ if(g.raw) o+=g.raw(c,a,f);
+ if(g.s) o+=`<g fill="none" stroke="${c}" stroke-width="1.7">${g.s}</g>`;
+ if(g.a) o+=`<g fill="none" stroke="${a}" stroke-width="1.7">${g.a}</g>`;
+ if(g.d) o+=`<g fill="none" stroke="${a}" stroke-width="1.5" stroke-dasharray="2 2.4">${g.d}</g>`;
+ if(g.seg) o+=`<g fill="none" stroke="${warn?O:a}" stroke-width="2.6">${warn?'<path d="M5.4 12h1.4"/>':g.seg}</g>`;
+ if(g.f) o+=`<g fill="${f}" stroke="none">${g.f}</g>`;
+ if(g.fx) o+=`<g fill="${warn?O:a}" stroke="none">${warn?'<rect x="5.4" y="5.4" width="4.2" height="4.2" rx="1"/>':g.fx}</g>`;
+ return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">${o}</svg>`;
+}
+
+const roleName={read:'Read',write:'Write',status:'Status',switch:'Switch'};
+const roleCol={read:D,write:O,status:D,switch:T};
+
+document.getElementById('fam').innerHTML=GL.map(g=>`
+<div class="cell">
+ <div class="pair">
+  <div class="half"><span class="gl">${draw(g,24)}${draw(g,16)}</span><span class="cap">Colour · 24 / 16</span></div>
+  <div class="half"><span class="gl">${draw(g,24,true)}${draw(g,16,true)}</span><span class="cap">Mono · 24 / 16</span></div>
+ </div>
+ <div class="nm">${g.nm}${g.alt?`<span class="alt">Alt ${g.alt}</span>`:''}</div>
+ <div class="role" style="color:${roleCol[g.role]}">${roleName[g.role]}</div>
+ <p class="why">${g.why}</p>
+</div>`).join('')+`
+<div class="cell">
+ <div class="pair">
+  <div class="half"><span class="gl" style="gap:9px">${draw(GL[10],20)}<b style="font-family:var(--fh);font-weight:800;font-size:17px;letter-spacing:-.4px">248</b></span><span class="cap">A in context</span></div>
+  <div class="half"><span class="gl" style="gap:9px">${draw(GL[11],20)}<b style="font-family:var(--fh);font-weight:800;font-size:17px;letter-spacing:-.4px">248</b></span><span class="cap">B in context</span></div>
+ </div>
+ <div class="nm">Credit balance, as a component</div>
+ <div class="role" style="color:${D}">Status</div>
+ <p class="why">The numeral stays primary and the meter reads as a qualifier beside it. Both alternatives shown at 20px against a 17px numeral, the panel-header proportion.</p>
+</div>
+<div class="cell">
+ <div class="pair">
+  <div class="half"><span class="gl" style="gap:9px">${draw(GL[10],20,false,true)}<b style="font-family:var(--fh);font-weight:800;font-size:17px;letter-spacing:-.4px;color:${O}">11</b></span><span class="cap">A · low balance</span></div>
+  <div class="half"><span class="gl" style="gap:9px">${draw(GL[11],20,false,true)}<b style="font-family:var(--fh);font-weight:800;font-size:17px;letter-spacing:-.4px;color:${O}">11</b></span><span class="cap">B · low balance</span></div>
+ </div>
+ <div class="nm">Where orange is allowed</div>
+ <div class="role" style="color:${O}">Warning</div>
+ <p class="why">Orange enters the credit component only when the balance is nearly spent. Because no other status glyph carries it, the colour keeps its meaning as consequence.</p>
+</div>`;
+
+const RESOLVED=['copy','queue','call','dossier','worklist','draftA','chat','today','log','creditA'];
+document.getElementById('sil').innerHTML=RESOLVED.map(id=>draw(GL.find(g=>g.id===id),16,true)).join('');
+document.getElementById('sil2').innerHTML=EXIST.map(g=>draw(g,16,true)).join('');
+
+const TABS=[['worklist','Worklist'],['draftA','Draft'],['chat','Chat'],['today','Today'],['log','Log'],['fields','Fields']];
+document.getElementById('tabs').innerHTML=TABS.map(([id,nm],i)=>{
+ const g=id==='fields'?{role:'read',s:`<g transform="translate(-.4 -.4) translate(1.6 1.6) scale(1.55)"><path d="${W}"/></g>`,a:'<path d="M9.2 9.6 6.4 7.6M10 6.6 8.2 5.2"/>'}:GL.find(x=>x.id===id);
+ return `<div class="tab${i===2?' on':''}">${draw(g,20)}<span>${nm}</span></div>`;
+}).join('');
+
+const AUDIT=[
+ {a:'worklist',b:'log',t:'Worklist / Log',x:'Both stand on a vertical spine. Worklist runs three diagonals off it and carries one filled node at the first vein’s tip, so its silhouette leans. Log keeps horizontal rules that shorten downward and beads its spine with three filled discs, so its silhouette is orthogonal and weighted at the left edge. At 16px the lean is the tell.'},
+ {a:'queue',b:'dossier',t:'Add to action queue / Import LinkedIn dossier',x:'Both carry a solid module. Queue is three full-width horizontal rules with the module low and to the right, reading as a wide striped block. Dossier is a tall page on the right whose left edge is dashed, with the module straddling that edge — a vertical outline entered from the side by one solid block.'},
+ {a:'queue',b:'campaign',t:'Add to action queue / Add to campaign',x:'Queue is orthogonal and stacked; campaign is three wings rising on a diagonal with the module at the top of the flight. The two never share an axis, which is what separates them once colour is gone.'},
+ {a:'copy',b:'draftA',t:'Copy outreach prompt / Draft',x:'Both are rectilinear pages. Copy is two offset cards, so its outline steps twice and encloses a double contour at the overlap. Draft is a single page with a break in the bottom-right contour — one outline, one gap. At 16px copy reads heavier and staircased.'},
+ {a:'today',b:'creditA',t:'Today / Credit balance A',x:'Both are bounded horizontal containers. Today is nearly square with a header rule and a node inside the lower half. Credit is a 6.5:1 capsule with segments on the centre line and no crossing rule. The aspect ratio alone resolves it.'},
+ {a:'chat',b:'wsA',t:'Chat / Workspace switcher A',x:'Both are rotational pairs. Chat has no ring and its two forms are offset on the diagonal with a clear band of ground between them. Workspace A is enclosed and centred, and the wings meet at the middle. Ring present or absent is the difference, which is also the rule the set uses everywhere else.'},
+ {a:'call',b:'campaign',t:'Log a call outcome / Add to campaign',x:'Both put a solid node at the top-right. The handset is one continuous stroke sweeping top-left to bottom-right; campaign is three separate lobes. No shared contour, so this pair only reads as similar in the position of the node, not the mass.'}
+];
+document.getElementById('audit').innerHTML=AUDIT.map(r=>{
+ const A=GL.find(g=>g.id===r.a)||EXIST.find(g=>g.id===r.a), B=GL.find(g=>g.id===r.b)||EXIST.find(g=>g.id===r.b);
+ return `<div class="au"><span class="gs">${draw(A,16,true)}${draw(B,16,true)}${draw(A,32,true)}${draw(B,32,true)}</span><div class="tx"><div class="tt">${r.t}</div><p class="tb">${r.x}</p></div></div>`;
+}).join('');
+</script>
+</body>
+</html>
