@@ -1,7 +1,8 @@
 {
   "set": "CIS / Scout panel icons",
-  "version": "3.0.0-draft",
-  "source": "source/CIS Icon Set v3 (geometric wing).html",
+  "version": "4.0.0",
+  "status": "finalisation candidate — awaiting review of FINALISATION.html",
+  "source": "source/CIS Icon Set v3 (geometric wing).html, as amended by the round-four ruling",
   "generatedBy": "build-icons.mjs",
   "grid": 24,
   "strokeWidth": 1.7,
@@ -10,20 +11,50 @@
     "teal": "#1B9894",
     "deepTeal": "#156E6B",
     "orange": "#E1702F",
-    "ink": "#152420"
+    "ink": "#152420",
+    "mute": "#A8B0AC",
+    "surface": "#FFFFFF",
+    "hover": "#F2F8F7",
+    "pressed": "#E8F5F3",
+    "cream": "#F8F7F4"
   },
   "grammar": {
     "read": "Open or receptive geometry, predominantly outline, movement inward. No solid marker.",
     "write": "A closed destination or committed terminal plus one solid orange consequence marker.",
-    "ring": "Only where a context is genuinely held, bounded or switched.",
-    "rotation": "Genuine counterparts are one composition under rotate(180 12 12), never a mirror.",
-    "selectedTab": "Ground tint plus a deep-teal underline, carried by the container. Never orange."
+    "ring": "Not used. The header lockup carries the mark; a ring at icon scale reads as the logo.",
+    "rotation": "Genuine counterparts are one composition under rotate(180 12 12), never a mirror. Such a composition must be centred on (12,12) or its counterpart leaves the box.",
+    "selectedTab": "Ground tint plus a 2px deep-teal underline, carried by the container. Never orange.",
+    "surface": "Action icons sit on white. Orange measures 2.99:1 on cream and fails the 3:1 floor for non-text UI."
   },
-  "unresolved": [
-    "Draft A/B",
-    "Credit balance A/B",
-    "Workspace switcher A/B"
-  ],
+  "states": {
+    "default": {
+      "ground": "#FFFFFF",
+      "note": "Icons sit on white. Orange measures 3.20:1 there; on cream it is 2.99:1 and fails."
+    },
+    "hover": {
+      "ground": "#F2F8F7",
+      "note": "Ground tint only. No colour change in the glyph."
+    },
+    "pressed": {
+      "ground": "#E8F5F3",
+      "note": "Deeper tint of the same hue. Still no glyph change."
+    },
+    "focus": {
+      "ground": "#FFFFFF",
+      "ring": "#156E6B",
+      "note": "2px deep-teal ring, 2px offset. Ground unchanged, so focus and hover can co-occur."
+    },
+    "selected": {
+      "ground": "#F2F8F7",
+      "underline": "#156E6B",
+      "note": "Tabs only. Ground plus a 2px deep-teal underline carried by the container. Never orange."
+    },
+    "disabled": {
+      "ground": "#FFFFFF",
+      "flatten": "#A8B0AC",
+      "note": "Whole glyph flattens to one mute grey. The orange marker disappears, which is correct: no consequence is available."
+    }
+  },
   "icons": [
     {
       "id": "pull",
@@ -31,7 +62,16 @@
       "file": "pull-linkedin-info.svg",
       "group": "action",
       "role": "read",
-      "why": "A wing receiving two signal arcs — lightweight extraction, nothing committed."
+      "why": "A wing receiving two signal arcs. Lightweight extraction — outline throughout, nothing committed."
+    },
+    {
+      "id": "copy",
+      "name": "Copy outreach prompt",
+      "file": "copy-outreach-prompt.svg",
+      "group": "action",
+      "role": "read",
+      "smallMaster": "small/copy-outreach-prompt.svg",
+      "why": "Two offset prompt cards. The wing enters as the back card’s top-right corner — two arcs meeting at a tip — so the brand sits in the fragment being copied, not in the metaphor."
     },
     {
       "id": "campaign",
@@ -42,32 +82,6 @@
       "why": "Three wings rising on a diagonal — a flight formation — with the solid module at the top of the climb."
     },
     {
-      "id": "sent",
-      "name": "Log sent",
-      "file": "log-sent.svg",
-      "group": "action",
-      "role": "write",
-      "rotationalPair": "reply",
-      "why": "A wing leaving a groundline. Its counterpart, Log reply, is this same composition rotated 180° — the operation that makes the mark’s second half from its first."
-    },
-    {
-      "id": "reply",
-      "name": "Log reply",
-      "file": "log-reply.svg",
-      "group": "action",
-      "role": "write",
-      "rotationalPair": "sent",
-      "why": "Log sent under rotate(180 12 12). The pairing is enforced by the transform, so it cannot drift."
-    },
-    {
-      "id": "copy",
-      "name": "Copy outreach prompt",
-      "file": "copy-outreach-prompt.svg",
-      "group": "action",
-      "role": "read",
-      "why": "Two offset prompt cards. The wing enters as the back card’s top-right corner — two arcs meeting at a tip — so the brand sits in the fragment being copied, not in the metaphor."
-    },
-    {
       "id": "queue",
       "name": "Add to action queue",
       "file": "add-to-action-queue.svg",
@@ -76,12 +90,30 @@
       "why": "An ordered destination of three positions with the last one left open, and a solid module entering it from the right. Wide and striped, where Add to campaign rises diagonally."
     },
     {
+      "id": "sent",
+      "name": "Log sent",
+      "file": "log-sent.svg",
+      "group": "action",
+      "role": "write",
+      "rotationalPair": "reply",
+      "why": "A wing leaving the record on a rising diagonal, with the consequence marker at the head of the flight. Round four added that marker: the pair previously carried no filled mass and so failed the write grammar it belongs to."
+    },
+    {
+      "id": "reply",
+      "name": "Log reply",
+      "file": "log-reply.svg",
+      "group": "action",
+      "role": "write",
+      "rotationalPair": "sent",
+      "why": "Log sent under rotate(180 12 12) — the operation that makes the mark’s second half from its first. Enforced by the transform, so the pairing cannot drift."
+    },
+    {
       "id": "call",
       "name": "Log a call outcome",
       "file": "log-call-outcome.svg",
       "group": "action",
       "role": "write",
-      "why": "A conventional handset, untouched, plus one closed outcome node. The node is the only committed mass in the glyph, which is what makes it a log rather than a dial."
+      "why": "A conventional handset, untouched, plus one closed outcome node. The node is the only committed mass, which is what makes it a log rather than a dial."
     },
     {
       "id": "dossier",
@@ -92,33 +124,31 @@
       "why": "A bounded document receiving one contained bundle across a dashed boundary. Pull LinkedIn info stays a light extraction; this is a block of material crossing into the record."
     },
     {
+      "id": "fields",
+      "name": "Fields",
+      "file": "tab-fields.svg",
+      "group": "tab",
+      "role": "read",
+      "tab": "Fields",
+      "why": "Three key/value rows across an open gutter: properties already arranged, where Pull LinkedIn info is information still moving inward. No contour, so it cannot be a document; no verticals, so it cannot be a grid. The value ends are set on a wing arc, which is the only family mark it carries."
+    },
+    {
       "id": "worklist",
       "name": "Worklist",
       "file": "tab-worklist.svg",
       "group": "tab",
       "role": "read",
       "tab": "Worklist",
-      "why": "A spine with three ordered veins reading top to bottom, all angled the same way so the structure stays a list rather than a plant. The single filled node marks the active position."
+      "why": "A spine with three ordered veins reading top to bottom, all angled the same way so the structure stays a list rather than a plant. The single filled node marks the active position. Its lean is deliberate and left uncorrected."
     },
     {
-      "id": "draftA",
+      "id": "draft",
       "name": "Draft",
-      "file": "tab-draft-a.svg",
+      "file": "tab-draft.svg",
       "group": "tab",
       "role": "read",
       "tab": "Draft",
-      "alternative": "A",
-      "why": "A page whose contour is deliberately unfinished at the bottom-right, with the second rule stopping short. Mid-change stated by the geometry, with no pencil to confuse with Edit."
-    },
-    {
-      "id": "draftB",
-      "name": "Draft",
-      "file": "tab-draft-b.svg",
-      "group": "tab",
-      "role": "read",
-      "tab": "Draft",
-      "alternative": "B",
-      "why": "The same idea on a message form rather than a page: the bubble’s lower run and tail are left open. Reads more clearly as unsent outreach, less clearly as a document."
+      "why": "A page whose contour is deliberately unfinished at the bottom-right, with the second rule stopping short. Mid-change stated by the geometry, and no pencil to confuse with Edit. The opening is large on purpose — a small nick reads as a rasterising artefact, a whole absent corner reads as intent."
     },
     {
       "id": "chat",
@@ -136,6 +166,7 @@
       "group": "tab",
       "role": "read",
       "tab": "Today",
+      "smallMaster": "small/tab-today.svg",
       "why": "A bounded day inside a conventional calendar. One emphatic present-day node, deep teal rather than orange, since arriving at today spends nothing."
     },
     {
@@ -145,69 +176,33 @@
       "group": "tab",
       "role": "read",
       "tab": "Log",
+      "smallMaster": "small/tab-log.svg",
       "why": "A straight vertical path with three deposited nodes and rules that shorten as they recede. Settled past, where Worklist points at pending action."
     },
     {
-      "id": "creditA",
-      "name": "Credit balance",
-      "file": "credit-balance-a.svg",
-      "group": "header",
-      "role": "status",
-      "alternative": "A",
-      "why": "A segmented meter: five finite positions, three remaining. Restrained enough to sit at 14px beside the numeral without competing with it."
-    },
-    {
-      "id": "creditB",
-      "name": "Credit balance",
-      "file": "credit-balance-b.svg",
-      "group": "header",
-      "role": "status",
-      "alternative": "B",
-      "why": "Four compact units, three spent. Counts rather than measures, which suits a balance that moves in whole credits, and holds its shape better than a meter at 14px."
-    },
-    {
-      "id": "wsA",
+      "id": "workspace",
       "name": "Workspace switcher",
-      "file": "workspace-switcher-a.svg",
+      "file": "workspace-switcher.svg",
       "group": "header",
       "role": "switch",
-      "alternative": "A",
-      "why": "The mark’s own arrangement at icon scale: two wings in the held ring, rotationally paired. Teal and deep teal only — identity is carried by the geometry, and orange stays available for a warning."
+      "why": "Two arcs related by 180° rotation, each with a committed terminal, turning around the held context in the centre. The switch is the rotation, so the whole context visibly changes rather than being colour-coded. No ring and no wing: the header lockup already carries the mark, and a ring here would read as the logo."
     },
     {
-      "id": "wsB",
-      "name": "Workspace switcher",
-      "file": "workspace-switcher-b.svg",
+      "id": "credit",
+      "name": "Credit balance",
+      "file": "credit-balance.svg",
       "group": "header",
-      "role": "switch",
-      "alternative": "B",
-      "why": "Two arcs related by 180° rotation, each with a committed terminal, turning around the held context in the centre. The switch is the rotation, so the whole context visibly changes rather than being colour-coded."
+      "role": "status",
+      "smallMaster": "small/credit-balance.svg",
+      "why": "A segmented meter: finite positions, some remaining. Restrained enough to sit at 14px beside the numeral without competing with it. The numeral stays primary; the meter qualifies it."
     },
     {
-      "id": "fields",
-      "name": "Fields",
-      "file": "tab-fields.svg",
-      "group": "tab",
-      "role": "read",
-      "tab": "Fields",
-      "why": "A wing at tab scale with two short keyed strokes reading into it — the record’s stored values, received rather than written."
-    },
-    {
-      "id": "creditAWarning",
+      "id": "creditWarning",
       "name": "Credit balance — low balance",
-      "file": "credit-balance-a-warning.svg",
+      "file": "credit-balance-warning.svg",
       "group": "header",
       "role": "warning",
-      "alternative": "A",
-      "why": "Orange enters the credit component only when the balance is nearly spent, so the colour keeps its meaning as consequence."
-    },
-    {
-      "id": "creditBWarning",
-      "name": "Credit balance — low balance",
-      "file": "credit-balance-b-warning.svg",
-      "group": "header",
-      "role": "warning",
-      "alternative": "B",
+      "smallMaster": "small/credit-balance-warning.svg",
       "why": "Orange enters the credit component only when the balance is nearly spent, so the colour keeps its meaning as consequence."
     }
   ]
